@@ -1,22 +1,99 @@
+/*
+CSS Inspired by:
+- Lecture and tutorials by Paul Brokenshire
+- W3Schools
+    https://www.w3schools.com/cssref/css3_pr_background.asp
+*/
+
 *{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
-
+/*
+    ----------- GENERAL -------------
+*/
 body{
     font-size: 16px;
     font-family: 'Work Sans', Helvetica, sans-serif;
     font-weight: 400;
+    line-height: 1.5;
+    color: #F7F7F5;
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-container{
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+}
+
+.left{
+    justify-self: flex-start;
+}
+.right{
+    justify-self: flex-end;
+}
+
+.light{
     color: #3A5864;
 }
+
+.black{
+    color: black;
+}
+/*
+    ----------- Text -------------
+*/
+
 a{
     text-decoration: none;
     color: black;
 }
+a:hover{
+    color: rgb(133, 133, 133);
+}
+
+h1{
+    font-size: 2.25rem;
+    margin: 0em 0;
+    line-height: 1.25;
+}
+h2{
+    font-size: 1.75rem;
+    margin: .5em 0;
+}
+h3{
+    font-size: 1.25rem;
+    margin: .5em 0;
+}
+
+p{
+    font-size: 1rem;
+    margin: .5em 0;
+}
+
+.copyright{
+    font-size: .8rem;
+    color: #3A5864;
+    text-align: center;
+    padding: 1em 0;
+
+}
+
+a i{
+    align-self: center;
+}
+
+/*
+    ----------- Homescreen Left Column -------------
+*/
 .header-name{
     font-family: 'Permanent Marker', sans-serif;
+
     font-size: 2rem;
     margin-bottom: 2em;
     color: #3A5864;
@@ -48,6 +125,26 @@ header{
     height: auto;
     background-color: #F7F7F5;
 }
+
+@media (min-width: 50rem) {
+    header{
+        width: 24rem;
+        height: 100vh;
+        position: fixed;
+    }
+    .work{
+        margin-left: 24rem;
+    }
+    .project{
+        height: auto;
+    }
+
+}
+
+/*
+    ----------- Homescreen Right Column -------------
+*/
+
 .project{
     display: flex;
     flex-direction: column;
@@ -89,9 +186,11 @@ header{
 
 .project-title{
     color: #3A5864;
+    font-weight: 600;
+    font-size: 1.25rem;
 }
 .number{
-    font-size: 2rem;
+    font-size: 1.5rem;
     align-self: flex-start;
 
 }
@@ -105,17 +204,83 @@ header{
     color: #729BA9;
 }
 
-@media (min-width: 56rem) {
-    header{
-        width: 40%;
-        height: 100vh;
-        position: fixed;
-    }
-    .work{
-        margin-left: 40%;
-    }
-    .project{
-        height: auto;
-    }
 
+/*
+    ----------- Project Page -------------
+*/
+.dark{
+    color: #F9FAF8;
+}
+
+.dark:hover{
+    color: #E1E2DD;
+}
+
+.project-header{
+    width: 100%;
+    justify-content: space-between;
+    padding: 1em;
+    position: absolute;
+    overflow: auto;
+    white-space: nowrap;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.nav-item{
+    font-size: 1.5rem;
+    padding: 0 .5em;
+}
+
+.nav-active{
+    text-decoration: underline;
+}
+
+/*@media (max-width: 31.25rem){
+    .project-header{
+        flex-direction: column;
+        position: static;
+        margin: 0;
+        padding: 1em;
+        background-color: black;
+    }
+    .nav{
+        flex-direction: column;
+        justify-content: center;
+
+    }
+    .nav-item{
+        padding-top: 1em;
+        text-align: center;
+    }
+}
+*/
+.project-banner{
+    /*background-image: url(../img/strava-phone-web.jpg);
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;*/
+    
+    width: 100%;
+    height: auto;
+}
+
+.project-body{
+    padding: 1em;
+    max-width: 56.25rem;
+    margin: 0 auto;
+}
+
+
+footer{
+    padding: 1em;
+    justify-content: space-between;
+}
+footer.first{
+    justify-content: flex-end;
+}
+footer.last{
+    justify-content: flex-start;
 }
