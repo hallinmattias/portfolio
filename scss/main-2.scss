@@ -1,0 +1,375 @@
+//      Mixins inpired by: 
+//      Sass for webdesigners - Cederholm
+//      https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+$color-body-copy: #32332E;
+$color-dark: #32332E;
+$color-light: #F9FAF8;
+$color-semi-light: #E1E2DD;
+$color-primary: #729BA9;
+$color-primary-dark: #3A5864;
+
+@mixin rounded($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin shadow($x, $y, $blur, $color) {
+    -webkit-box-shadow: $x $y $blur $color;
+    -moz-box-shadow: $x $y $blur $color;
+    box-shadow: $x $y $blur $color;
+}
+
+@mixin shadow-inset($x, $y, $blur, $color) {
+    -webkit-box-shadow: inset $x $y $blur $color;
+    -moz-box-shadow: inset $x $y $blur $color;
+    box-shadow: inset $x $y $blur $color;
+}
+
+@mixin transition($property) {
+    -webkit-transition: $property .1s ease;
+    -moz-transition: $property .1s ease;
+    -o-transition: $property .1s ease;
+    transition: $property .1s ease;
+}
+   
+@mixin box-sizing {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+   
+@mixin linear-gradient($from, $to) {
+    /* Fallback for sad browsers */
+    background-color: $to;
+    /* Mozilla Firefox */
+    background-image: -moz-linear-gradient($from, $to);
+    /* Opera */
+    background-image: -o-linear-gradient($from, $to);
+    /* WebKit (Chrome 11+) */
+    background-image: -webkit-gradient(linear, »
+    left top, left bottom, color-stop(0, $from), »
+    color-stop(1, $to));
+    /* WebKit (Safari 5.1+, Chrome 10+) */
+    background-image: -webkit-linear-gradient($from, $to);
+    /* IE10 */
+    background-image: -ms-linear-gradient($from, $to);
+    /* W3C */
+    background-image: linear-gradient($from, $to);
+}
+
+@mixin flexbox($direction: row) {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-direction: $direction;
+    -moz-flex-direction: $direction;
+    -ms-flex-direction: $direction;
+  }
+  
+  @mixin flex($values) {
+    -webkit-box-flex: $values;
+    -moz-box-flex:  $values;
+    -webkit-flex:  $values;
+    -ms-flex:  $values;
+    flex:  $values;
+  }
+  
+  @mixin order($val) {
+    -webkit-box-ordinal-group: $val;  
+    -moz-box-ordinal-group: $val;     
+    -ms-flex-order: $val;     
+    -webkit-order: $val;  
+    order: $val;
+  }
+  
+//  .wrapper {
+//    @include flexbox();
+//  }
+//  
+//  .item {
+//    @include flex(1 200px);
+//    @include order(2);
+//  }
+
+/*
+CSS Inspired by:
+- Lecture and tutorials by Paul Brokenshire
+- W3Schools
+    https://www.w3schools.com/cssref/css3_pr_background.asp
+    https://www.w3schools.com/howto/howto_css_menu_horizontal_scroll.asp
+*/
+
+/*
+    ----------- GENERAL -------------
+*/
+
+*{
+    @include box-sizing();
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-size: 16px;
+    font-family: 'Work Sans', Helvetica, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $color-light;
+    @include flexbox();
+}
+
+.left{
+    justify-self: flex-start;
+}
+.right{
+    justify-self: flex-end;
+}
+
+.light{
+    color: $color-primary-dark;
+}
+
+.black{
+    color: $color-body-copy;
+}
+
+/*
+    ----------- Text -------------
+*/
+
+a{
+    text-decoration: none;
+    color: $color-body-copy;
+    i{
+        align-self: center;
+    }
+    &:hover{
+        color:lighten($color: $color-body-copy, $amount: 30%);
+    }
+}
+
+h1{
+    font-size: 2.25rem;
+    margin: 0em 0;
+    line-height: 1.25;
+}
+h2{
+    font-size: 1.75rem;
+    margin: .5em 0;
+}
+h3{
+    font-size: 1.25rem;
+    margin: .5em 0;
+}
+
+p{
+    font-size: 1rem;
+    margin: .5em 0;
+}
+
+.copyright{
+    font-size: .8rem;
+    color: $color-primary-dark;
+    text-align: center;
+    padding: 1em 0;
+
+}
+
+/*
+    ----------- Homescreen Left Column -------------
+*/
+.header-name{
+    font-family: 'Permanent Marker', sans-serif;
+
+    font-size: 2rem;
+    margin-bottom: 2em;
+    color: $color-primary-dark;
+
+}
+.header-quote{
+    text-align: right;
+    font-size: 1.2rem;
+    margin-bottom: 1em;
+    align-self: center;
+}
+.learn-more{
+    margin-top: 1em;
+    text-align: right;
+    font-size: 1rem;
+}
+.blue-light{
+    color: $color-primary;
+}
+.blue-dark{
+    color: $color-primary-dark;
+    font-weight: 600;
+}
+header{
+    @include flexbox(column);
+    padding: 2em;
+    width: 100%;
+    height: auto;
+    background-color: $color-light;
+}
+
+@media (min-width: 50rem) {
+    header{
+        width: 24rem;
+        height: 100vh;
+        position: fixed;
+    }
+    .work{
+        margin-left: 24rem;
+    }
+    .project{
+        height: auto;
+    }
+}
+
+/*
+    ----------- Homescreen Right Column -------------
+*/
+
+.project{
+    @include flexbox(column);
+    width: 100%;
+    padding: 1em 2em;
+    align-items: center;
+}
+
+.project-1{
+    background-color: lighten($color: $color-primary, $amount: 30%);
+}
+.project-2{
+    background-color: lighten($color: $color-primary, $amount: 40%);
+}
+.project-bottom{
+    margin-top: 2em;
+    width: 100%;
+    @include flexbox();
+    justify-content: space-between;
+    align-content: center;
+}
+
+.project-img{
+    height: 18.75rem;
+    width: auto;
+    transition: .1s ease-out;
+
+}
+.project-img:hover{
+    height: 20rem;
+}
+.project-img-link{
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+}
+
+.project-title{
+    color: $color-primary-dark;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+.number{
+    font-size: 1.5rem;
+    align-self: flex-start;
+
+}
+
+.fas{
+    color: $color-primary-dark;
+    @include transition();
+}
+
+.fas:hover{
+    color: $color-primary;
+}
+
+/*
+    ----------- Project Page -------------
+*/
+.dark{
+    color: $color-light;
+}
+
+.dark:hover{
+    color: $color-semi-light;
+}
+
+.project-header{
+    width: 100%;
+    justify-content: space-between;
+    padding: 1em;
+    position: absolute;
+    overflow: auto;
+    white-space: nowrap;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.nav-item{
+    font-size: 1.5rem;
+    padding: 0 .5em;
+}
+
+.nav-active{
+    text-decoration: underline;
+}
+
+/*@media (max-width: 31.25rem){
+    .project-header{
+        flex-direction: column;
+        position: static;
+        margin: 0;
+        padding: 1em;
+        background-color: black;
+    }
+    .nav{
+        flex-direction: column;
+        justify-content: center;
+
+    }
+    .nav-item{
+        padding-top: 1em;
+        text-align: center;
+    }
+}
+*/
+.project-banner{
+    /*background-image: url(../img/strava-phone-web.jpg);
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;*/
+    
+    width: 100%;
+    height: auto;
+}
+
+.project-body{
+    padding: 1em;
+    max-width: 56.25rem;
+    margin: 0 auto;
+}
+
+footer{
+    padding: 1em;
+    justify-content: space-between;
+}
+footer.first{
+    justify-content: flex-end;
+}
+footer.last{
+    justify-content: flex-start;
+}
+
+
