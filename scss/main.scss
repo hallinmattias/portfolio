@@ -2,6 +2,7 @@
 //      Sass for webdesigners - Cederholm
 //      https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
+$color-background: #32332E;
 $color-body-copy: #32332E;
 $color-dark: #32332E;
 $color-light: #F9FAF8;
@@ -9,23 +10,10 @@ $color-semi-light: #E1E2DD;
 $color-primary: #729BA9;
 $color-primary-dark: #3A5864;
 
-@mixin rounded($radius) {
-    -webkit-border-radius: $radius;
-    -moz-border-radius: $radius;
-    border-radius: $radius;
-}
-
-@mixin shadow($x, $y, $blur, $color) {
-    -webkit-box-shadow: $x $y $blur $color;
-    -moz-box-shadow: $x $y $blur $color;
-    box-shadow: $x $y $blur $color;
-}
-
-@mixin shadow-inset($x, $y, $blur, $color) {
-    -webkit-box-shadow: inset $x $y $blur $color;
-    -moz-box-shadow: inset $x $y $blur $color;
-    box-shadow: inset $x $y $blur $color;
-}
+$font-body: 'Montserrat', Helvetica, sans-serif; //'Raleway', Helvetica, sans-serif;
+$font-title: 'Sen', Helvetica, sans-serif;
+$font-headings: 'Montserrat', Helvetica, sans-serif;
+$font-number: 'Montserrat', Helvetica, sans-serif;
 
 @mixin transition($property) {
     -webkit-transition: $property .1s ease;
@@ -39,7 +27,20 @@ $color-primary-dark: #3A5864;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-   
+
+@mixin flexbox($direction: row) {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-direction: $direction;
+    -moz-flex-direction: $direction;
+    -ms-flex-direction: $direction;
+    flex-direction: $direction;
+}
+
 @mixin linear-gradient($from, $to) {
     /* Fallback for sad browsers */
     background-color: $to;
@@ -59,43 +60,11 @@ $color-primary-dark: #3A5864;
     background-image: linear-gradient($from, $to);
 }
 
-@mixin flexbox($direction: row) {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-
-    -webkit-flex-direction: $direction;
-    -moz-flex-direction: $direction;
-    -ms-flex-direction: $direction;
-  }
-  
-  @mixin flex($values) {
-    -webkit-box-flex: $values;
-    -moz-box-flex:  $values;
-    -webkit-flex:  $values;
-    -ms-flex:  $values;
-    flex:  $values;
-  }
-  
-  @mixin order($val) {
-    -webkit-box-ordinal-group: $val;  
-    -moz-box-ordinal-group: $val;     
-    -ms-flex-order: $val;     
-    -webkit-order: $val;  
-    order: $val;
-  }
-  
-//  .wrapper {
-//    @include flexbox();
-//  }
-//  
-//  .item {
-//    @include flex(1 200px);
-//    @include order(2);
-//  }
-
+@mixin shadow($x, $y, $blur, $color) {
+    -webkit-box-shadow: $x $y $blur $color;
+    -moz-box-shadow: $x $y $blur $color;
+    box-shadow: $x $y $blur $color;
+}
 /*
 CSS Inspired by:
 - Lecture and tutorials by Paul Brokenshire
@@ -109,17 +78,21 @@ CSS Inspired by:
 */
 
 *{
-    @include box-sizing();
+    @include box-sizing;
     padding: 0;
     margin: 0;
 }
-
 body{
     font-size: 16px;
-    font-family: 'Work Sans', Helvetica, sans-serif;
+    font-family: $font-body;
     font-weight: 400;
     line-height: 1.5;
     color: $color-light;
+    background-color: white;
+    @include flexbox(column);
+}
+
+.flex-container{
     @include flexbox();
 }
 
@@ -154,15 +127,18 @@ a{
 }
 
 h1{
+    font-family: $font-headings;
     font-size: 2.25rem;
     margin: 0em 0;
     line-height: 1.25;
 }
 h2{
+    font-family: $font-headings;
     font-size: 1.75rem;
     margin: .5em 0;
 }
 h3{
+    font-family: $font-headings;
     font-size: 1.25rem;
     margin: .5em 0;
 }
@@ -184,8 +160,7 @@ p{
     ----------- Homescreen Left Column -------------
 */
 .header-name{
-    font-family: 'Permanent Marker', sans-serif;
-
+    font-family: $font-title;
     font-size: 2rem;
     margin-bottom: 2em;
     color: $color-primary-dark;
@@ -215,6 +190,7 @@ header{
     width: 100%;
     height: auto;
     background-color: $color-light;
+    @include shadow(5px, 0, 10px, rgba($color: $color-primary-dark, $alpha: 0.15))
 }
 
 @media (min-width: 50rem) {
@@ -240,6 +216,9 @@ header{
     width: 100%;
     padding: 1em 2em;
     align-items: center;
+    @include linear-gradient(rgba(255, 255, 255, 0.01), $color-light);
+    @include shadow(0, 10px, 20px, rgba($color: $color-primary-dark, $alpha: 0.25));
+
 }
 
 .project-1{
@@ -260,11 +239,11 @@ header{
     height: 18.75rem;
     width: auto;
     transition: .1s ease-out;
+    &:hover{
+            height: 20rem;
+    }
+}
 
-}
-.project-img:hover{
-    height: 20rem;
-}
 .project-img-link{
     height: 20rem;
     display: flex;
@@ -279,18 +258,20 @@ header{
     font-size: 1.25rem;
 }
 .number{
+    font-family: $font-number;
+    font-weight: 300;
     font-size: 1.5rem;
     align-self: flex-start;
-
 }
+
+/* HEJ*/
 
 .fas{
     color: $color-primary-dark;
-    @include transition();
-}
-
-.fas:hover{
-    color: $color-primary;
+    @include transition(color);
+    &:hover{
+        color: $color-primary;
+    }
 }
 
 /*
@@ -298,10 +279,10 @@ header{
 */
 .dark{
     color: $color-light;
-}
-
-.dark:hover{
-    color: $color-semi-light;
+    &:hover{
+        color: $color-semi-light;
+        border-color: $color-semi-light;
+    }
 }
 
 .project-header{
@@ -322,10 +303,10 @@ header{
 }
 
 .nav-active{
-    text-decoration: underline;
+    border-bottom: solid 2px $color-light;
 }
 
-/*@media (max-width: 31.25rem){
+/* @media (max-width: 31.25rem){
     .project-header{
         flex-direction: column;
         position: static;
@@ -345,11 +326,13 @@ header{
 }
 */
 .project-banner{
-    /*background-image: url(../img/strava-phone-web.jpg);
+    /*
+    background-image: url(../img/strava-phone-web.jpg);
     background-size: 100% auto;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;*/
+    height: 100vh;
+    */
     
     width: 100%;
     height: auto;
@@ -371,5 +354,3 @@ footer.first{
 footer.last{
     justify-content: flex-start;
 }
-
-

@@ -1,0 +1,10 @@
+.wrapper {
+  display: flex;
+  -moz-flex-direction: row;
+  flex-direction: row;
+}
+
+.item {
+  flex: 1 200px;
+  order: 2;
+}
