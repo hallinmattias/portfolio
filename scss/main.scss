@@ -15,6 +15,8 @@ $font-title: 'Sen', Helvetica, sans-serif;
 $font-headings: 'Montserrat', Helvetica, sans-serif;
 $font-number: 'Montserrat', Helvetica, sans-serif;
 
+
+
 @mixin transition($property) {
     -webkit-transition: $property .1s ease;
     -moz-transition: $property .1s ease;
@@ -65,12 +67,19 @@ $font-number: 'Montserrat', Helvetica, sans-serif;
     -moz-box-shadow: $x $y $blur $color;
     box-shadow: $x $y $blur $color;
 }
+
+@mixin rounded($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
 /*
 CSS Inspired by:
 - Lecture and tutorials by Paul Brokenshire
 - W3Schools
     https://www.w3schools.com/cssref/css3_pr_background.asp
     https://www.w3schools.com/howto/howto_css_menu_horizontal_scroll.asp
+    https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_word-wrap
 */
 
 /*
@@ -88,7 +97,7 @@ body{
     font-weight: 400;
     line-height: 1.5;
     color: $color-light;
-    background-color: white;
+    background-color: $color-light;
     @include flexbox(column);
 }
 
@@ -114,15 +123,25 @@ body{
 /*
     ----------- Text -------------
 */
+.sen{
+    font-family: $font-title;
+}
+
+strong{
+    font-weight: 600;
+}
+.em{
+    font-style: italic;
+}
 
 a{
     text-decoration: none;
-    color: $color-body-copy;
+    color: $color-primary-dark;
     i{
         align-self: center;
     }
     &:hover{
-        color:lighten($color: $color-body-copy, $amount: 30%);
+        color: $color-primary;
     }
 }
 
@@ -148,6 +167,14 @@ p{
     margin: .5em 0;
 }
 
+ul{
+    margin-left: 1em;
+}
+
+.fas{
+    margin-right: .5em;
+}
+
 .copyright{
     font-size: .8rem;
     color: $color-primary-dark;
@@ -169,7 +196,7 @@ p{
 .header-quote{
     text-align: right;
     font-size: 1.2rem;
-    margin-bottom: 1em;
+    margin: auto 0;
     align-self: center;
 }
 .learn-more{
@@ -190,7 +217,20 @@ header{
     width: 100%;
     height: auto;
     background-color: $color-light;
-    @include shadow(5px, 0, 10px, rgba($color: $color-primary-dark, $alpha: 0.15))
+    /*@include shadow(5px, 0, 10px, rgba($color: $color-primary-dark, $alpha: 0.15))*/
+}
+
+.social-media{
+    margin-top: auto;
+    i{
+        padding: .5rem;
+        color: $color-primary-dark;
+        &:hover{
+            color: $color-primary;
+        }
+    }
+    @include flexbox();
+    justify-content: center;
 }
 
 @media (min-width: 50rem) {
@@ -200,7 +240,8 @@ header{
         position: fixed;
     }
     .work{
-        margin-left: 24rem;
+        margin: 1rem 1rem 1rem 25rem;
+        
     }
     .project{
         height: auto;
@@ -210,11 +251,14 @@ header{
 /*
     ----------- Homescreen Right Column -------------
 */
-
+#strava{
+    
+}
 .project{
     @include flexbox(column);
     width: 100%;
     padding: 1em 2em;
+    margin-bottom: 1rem;
     align-items: center;
     @include linear-gradient(rgba(255, 255, 255, 0.01), $color-light);
     @include shadow(0, 10px, 20px, rgba($color: $color-primary-dark, $alpha: 0.25));
@@ -244,6 +288,47 @@ header{
     }
 }
 
+.project-link{
+    align-self: flex-end;
+    height: auto;
+    color: $color-primary-dark;
+    &:hover{
+        color: $color-primary;
+        svg{
+            fill: $color-primary;
+        }
+    }
+    svg{
+        fill: $color-primary-dark;
+        @include transition(color);
+        &.right{
+            margin-left: 1em;
+        }
+        &.left{
+            margin-right: 1em;
+        }
+        
+    }
+}
+
+.project-link-dark{
+    align-self: flex-end;
+    height: auto;
+    color: $color-light;
+    &:hover{
+        color: $color-semi-light;
+        svg{
+            fill: $color-semi-light;
+        }
+    }
+    svg{
+        fill: $color-light;
+        @include transition(color);
+        margin-left: 1em;
+        
+    }
+}
+
 .project-img-link{
     height: 20rem;
     display: flex;
@@ -264,15 +349,6 @@ header{
     align-self: flex-start;
 }
 
-/* HEJ*/
-
-.fas{
-    color: $color-primary-dark;
-    @include transition(color);
-    &:hover{
-        color: $color-primary;
-    }
-}
 
 /*
     ----------- Project Page -------------
@@ -298,12 +374,11 @@ header{
 }
 
 .nav-item{
-    font-size: 1.5rem;
-    padding: 0 .5em;
+    margin: 0 .5em;
 }
 
 .nav-active{
-    border-bottom: solid 2px $color-light;
+    border-bottom: solid 1.3px $color-light;
 }
 
 /* @media (max-width: 31.25rem){
@@ -326,25 +401,33 @@ header{
 }
 */
 .project-banner{
-    /*
-    background-image: url(../img/strava-phone-web.jpg);
-    background-size: 100% auto;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    */
-    
+    background-color: $color-dark;
     width: 100%;
-    height: auto;
+    @include flexbox();
+    justify-content: center;
+    img{
+        width: auto;
+        height: 100%;
+        max-height: 100vh;
+        max-width: 60rem;
+    }
 }
 
 .project-body{
+    @include flexbox(column);
+    min-height: 100vh;
     padding: 1em;
     max-width: 56.25rem;
     margin: 0 auto;
+    justify-content: center;
+    img{
+        width: 100%;
+        height: auto;
+    }
 }
 
 footer{
+    @include flexbox();
     padding: 1em;
     justify-content: space-between;
 }
@@ -353,4 +436,68 @@ footer.first{
 }
 footer.last{
     justify-content: flex-start;
+}
+
+/*
+    ----------- Styleguide Page -------------
+*/
+.styleguide-body{
+
+    width: 100%;
+    padding: 1em 2em;
+    margin-bottom: 1em;
+    @include linear-gradient(rgba(255, 255, 255, 0.01), $color-light);
+    @include shadow(0, 10px, 20px, rgba($color: $color-primary-dark, $alpha: 0.25));
+    h3, .indent-1{
+        margin-left: 1rem;
+    }
+    p, .indent-2{
+        margin-left: 2rem;
+        max-width: 100%;
+        word-wrap: break-word;
+    }
+    .indent-3{
+        margin-left: 3rem;
+    }
+    ul{
+        margin-left: 2rem;
+    }
+}
+.color-wrapper{
+    @include flexbox();
+    width: 100%;
+    flex-wrap: wrap;
+    p{
+        margin-left: 0;
+    }
+    .color-item{
+        margin: .5em;
+        text-align: center;
+        .color-box{
+            width: 5rem;
+            height: 5rem;
+            @include rounded(1em);
+            @include shadow(5px, 5px, 10px, rgba($color: $color-primary-dark, $alpha: 0.25));
+            
+        }
+        .primary{
+            background-color: $color-primary;
+        }
+        .primary-dark{
+            background-color: $color-primary-dark;
+        }
+        .color-dark{
+            background-color: $color-dark;
+        }
+        .color-semi-light{
+            background-color: $color-semi-light;
+        }
+        .color-light{
+            background-color: $color-light;
+        }
+    }
+}
+
+#mood img{
+    max-width: 100%;
 }

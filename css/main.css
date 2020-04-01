@@ -5,6 +5,7 @@ CSS Inspired by:
 - W3Schools
     https://www.w3schools.com/cssref/css3_pr_background.asp
     https://www.w3schools.com/howto/howto_css_menu_horizontal_scroll.asp
+    https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_word-wrap
 */
 /*
     ----------- GENERAL -------------
@@ -23,7 +24,7 @@ body {
   font-weight: 400;
   line-height: 1.5;
   color: #F9FAF8;
-  background-color: white;
+  background-color: #F9FAF8;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -66,15 +67,29 @@ body {
 /*
     ----------- Text -------------
 */
+.sen {
+  font-family: "Sen", Helvetica, sans-serif;
+}
+
+strong {
+  font-weight: 600;
+}
+
+.em {
+  font-style: italic;
+}
+
 a {
   text-decoration: none;
-  color: #32332E;
+  color: #3A5864;
 }
+
 a i {
   align-self: center;
 }
+
 a:hover {
-  color: #818377;
+  color: #729BA9;
 }
 
 h1 {
@@ -87,22 +102,30 @@ h1 {
 h2 {
   font-family: "Montserrat", Helvetica, sans-serif;
   font-size: 1.75rem;
-  margin: 0.5em 0;
+  margin: .5em 0;
 }
 
 h3 {
   font-family: "Montserrat", Helvetica, sans-serif;
   font-size: 1.25rem;
-  margin: 0.5em 0;
+  margin: .5em 0;
 }
 
 p {
   font-size: 1rem;
-  margin: 0.5em 0;
+  margin: .5em 0;
+}
+
+ul {
+  margin-left: 1em;
+}
+
+.fas {
+  margin-right: .5em;
 }
 
 .copyright {
-  font-size: 0.8rem;
+  font-size: .8rem;
   color: #3A5864;
   text-align: center;
   padding: 1em 0;
@@ -121,7 +144,7 @@ p {
 .header-quote {
   text-align: right;
   font-size: 1.2rem;
-  margin-bottom: 1em;
+  margin: auto 0;
   align-self: center;
 }
 
@@ -154,9 +177,30 @@ header {
   width: 100%;
   height: auto;
   background-color: #F9FAF8;
-  -webkit-box-shadow: 5px 0 10px rgba(58, 88, 100, 0.15);
-  -moz-box-shadow: 5px 0 10px rgba(58, 88, 100, 0.15);
-  box-shadow: 5px 0 10px rgba(58, 88, 100, 0.15);
+  /*@include shadow(5px, 0, 10px, rgba($color: $color-primary-dark, $alpha: 0.15))*/
+}
+
+.social-media {
+  margin-top: auto;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.social-media i {
+  padding: .5rem;
+  color: #3A5864;
+}
+
+.social-media i:hover {
+  color: #729BA9;
 }
 
 @media (min-width: 50rem) {
@@ -165,15 +209,14 @@ header {
     height: 100vh;
     position: fixed;
   }
-
   .work {
-    margin-left: 24rem;
+    margin: 1rem 1rem 1rem 25rem;
   }
-
   .project {
     height: auto;
   }
 }
+
 /*
     ----------- Homescreen Right Column -------------
 */
@@ -189,6 +232,7 @@ header {
   flex-direction: column;
   width: 100%;
   padding: 1em 2em;
+  margin-bottom: 1rem;
   align-items: center;
   /* Fallback for sad browsers */
   background-color: #F9FAF8;
@@ -236,10 +280,64 @@ header {
 .project-img {
   height: 18.75rem;
   width: auto;
-  transition: 0.1s ease-out;
+  transition: .1s ease-out;
 }
+
 .project-img:hover {
   height: 20rem;
+}
+
+.project-link {
+  align-self: flex-end;
+  height: auto;
+  color: #3A5864;
+}
+
+.project-link:hover {
+  color: #729BA9;
+}
+
+.project-link:hover svg {
+  fill: #729BA9;
+}
+
+.project-link svg {
+  fill: #3A5864;
+  -webkit-transition: color 0.1s ease;
+  -moz-transition: color 0.1s ease;
+  -o-transition: color 0.1s ease;
+  transition: color 0.1s ease;
+}
+
+.project-link svg.right {
+  margin-left: 1em;
+}
+
+.project-link svg.left {
+  margin-right: 1em;
+}
+
+.project-link-dark {
+  align-self: flex-end;
+  height: auto;
+  color: #F9FAF8;
+}
+
+.project-link-dark:hover {
+  color: #E1E2DD;
+}
+
+.project-link-dark:hover svg {
+  fill: #E1E2DD;
+}
+
+.project-link-dark svg {
+  fill: #F9FAF8;
+  -webkit-transition: color 0.1s ease;
+  -moz-transition: color 0.1s ease;
+  -o-transition: color 0.1s ease;
+  transition: color 0.1s ease;
+  margin-left: 1em;
 }
 
 .project-img-link {
@@ -263,24 +361,13 @@ header {
   align-self: flex-start;
 }
 
-/* HEJ*/
-.fas {
-  color: #3A5864;
-  -webkit-transition: color 0.1s ease;
-  -moz-transition: color 0.1s ease;
-  -o-transition: color 0.1s ease;
-  transition: color 0.1s ease;
-}
-.fas:hover {
-  color: #729BA9;
-}
-
 /*
     ----------- Project Page -------------
 */
 .dark {
   color: #F9FAF8;
 }
+
 .dark:hover {
   color: #E1E2DD;
   border-color: #E1E2DD;
@@ -299,12 +386,11 @@ header {
 }
 
 .nav-item {
-  font-size: 1.5rem;
-  padding: 0 0.5em;
+  margin: 0 .5em;
 }
 
 .nav-active {
-  border-bottom: solid 2px #F9FAF8;
+  border-bottom: solid 1.3px #F9FAF8;
 }
 
 /* @media (max-width: 31.25rem){
@@ -327,24 +413,59 @@ header {
 }
 */
 .project-banner {
-  /*
-  background-image: url(../img/strava-phone-web.jpg);
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-  */
+  background-color: #32332E;
+  width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.project-banner img {
+  width: auto;
+  height: 100%;
+  max-height: 100vh;
+  max-width: 60rem;
+}
+
+.project-body {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 1em;
+  max-width: 56.25rem;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.project-body img {
   width: 100%;
   height: auto;
 }
 
-.project-body {
-  padding: 1em;
-  max-width: 56.25rem;
-  margin: 0 auto;
-}
-
 footer {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   padding: 1em;
   justify-content: space-between;
 }
@@ -355,4 +476,106 @@ footer.first {
 
 footer.last {
   justify-content: flex-start;
+}
+
+/*
+    ----------- Styleguide Page -------------
+*/
+.styleguide-body {
+  width: 100%;
+  padding: 1em 2em;
+  margin-bottom: 1em;
+  /* Fallback for sad browsers */
+  background-color: #F9FAF8;
+  /* Mozilla Firefox */
+  background-image: -moz-linear-gradient(rgba(255, 255, 255, 0.01), #F9FAF8);
+  /* Opera */
+  background-image: -o-linear-gradient(rgba(255, 255, 255, 0.01), #F9FAF8);
+  /* WebKit (Chrome 11+) */
+  background-image: -webkit-gradient(linear, » left top, left bottom, color-stop(0, rgba(255, 255, 255, 0.01)), » color-stop(1, #F9FAF8));
+  /* WebKit (Safari 5.1+, Chrome 10+) */
+  background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.01), #F9FAF8);
+  /* IE10 */
+  background-image: -ms-linear-gradient(rgba(255, 255, 255, 0.01), #F9FAF8);
+  /* W3C */
+  background-image: linear-gradient(rgba(255, 255, 255, 0.01), #F9FAF8);
+  -webkit-box-shadow: 0 10px 20px rgba(58, 88, 100, 0.25);
+  -moz-box-shadow: 0 10px 20px rgba(58, 88, 100, 0.25);
+  box-shadow: 0 10px 20px rgba(58, 88, 100, 0.25);
+}
+
+.styleguide-body h3, .styleguide-body .indent-1 {
+  margin-left: 1rem;
+}
+
+.styleguide-body p, .styleguide-body .indent-2 {
+  margin-left: 2rem;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.styleguide-body .indent-3 {
+  margin-left: 3rem;
+}
+
+.styleguide-body ul {
+  margin-left: 2rem;
+}
+
+.color-wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.color-wrapper p {
+  margin-left: 0;
+}
+
+.color-wrapper .color-item {
+  margin: .5em;
+  text-align: center;
+}
+
+.color-wrapper .color-item .color-box {
+  width: 5rem;
+  height: 5rem;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  border-radius: 1em;
+  -webkit-box-shadow: 5px 5px 10px rgba(58, 88, 100, 0.25);
+  -moz-box-shadow: 5px 5px 10px rgba(58, 88, 100, 0.25);
+  box-shadow: 5px 5px 10px rgba(58, 88, 100, 0.25);
+}
+
+.color-wrapper .color-item .primary {
+  background-color: #729BA9;
+}
+
+.color-wrapper .color-item .primary-dark {
+  background-color: #3A5864;
+}
+
+.color-wrapper .color-item .color-dark {
+  background-color: #32332E;
+}
+
+.color-wrapper .color-item .color-semi-light {
+  background-color: #E1E2DD;
+}
+
+.color-wrapper .color-item .color-light {
+  background-color: #F9FAF8;
+}
+
+#mood img {
+  max-width: 100%;
 }
