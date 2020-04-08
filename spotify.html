@@ -1,3 +1,8 @@
+<!--
+    Inspired by 
+    https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images
+
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,20 +23,26 @@
 <body class="black">
     <section class="project-banner-2">
         <nav class="project-header">
-            <a class="flex-container project-link-dark" href="index.html">
+            <a class="flex-container project-link-dark" href="index.html" aria-label="Link to homescreen">
                 <svg width="60" height="48" viewBox="0 0 60 48" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M2.56955 23.35L60 23.35L60 24.65L2.56963 24.65L8.45996 30.5404L7.54073 31.4596L0.0811087 24L7.54073 16.5404L8.45997 17.4596L2.56955 23.35Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.56955 23.35L60 23.35L60 24.65L2.56963 24.65L8.45996 30.5404L7.54073 31.4596L0.0811087 24L7.54073 16.5404L8.45997 17.4596L2.56955 23.35Z" />
                 </svg>
             </a>
             <div class="nav flex-container">
-                <a class="nav-item-dark number" href="strava.html">P01.</a>
-                <a class="nav-active-dark nav-item-dark number" href="spotify.html">P02.</a>
-                <a class="nav-item-dark number" href="bio.html">About</a>
+                <a class="nav-item-dark number" href="strava.html" aria-label="Link to project 1">P01.</a>
+                <a class="nav-active-dark nav-item-dark number" href="spotify.html" aria-label="Link to Project 2">P02.</a>
+                <a class="nav-item-dark number" href="bio.html" aria-label="Link to about page">About</a>
             </div>
         </nav>
+
+        <picture id="spotify-banner-photo" class="project-banner-photo">
+            <source media="(max-width: 40rem)" srcset="img/spotify/spotify-banner-small.png">
+            <source media="(min-width: 40.1rem)" srcset="img/spotify/spotify-banner.png">
+            <img src="img/spotify/spotify-banner.png" alt="Image of app interface before and after redesign">
+        </picture>
+
         <div class="project-banner-logo">
-            <img src="img/spotify/Spotify_Logo_White.png" alt="">
+            <img src="img/spotify/Spotify_Logo_White.png" alt="Spotify logo">
             <span>Usability Study
                 & Redesign</span>
         </div>
@@ -92,10 +103,10 @@
                     <p>Multiple theoretical evaluation methods were used to find possible problems in the scenario of creating and listening to a playlist. Heuristic task analysis was made to map out the different parts of the interaction. A cognitive walkthrough and a predictive error analysis was carried out afterwards to get further into the details of the different sub goals. The results were used as a theoretical basis to to analyze the different errors a user might do in the different steps. The methods gave a concrete picture of the problems of the app and used as a basis for the empirical testing. The same methods were used on the re-design for validation purposes.</p>
                     <p>The gestalt laws, Jordans 10 principles of usable design and Normans design principles were used as key references and human machine system guidelines in the theoretical evaluation along with Steven Hoobers principles regarding reachability and the thumb zone.</p>
                 </div>
-                <img src="img/spotify/thumbzone.png" alt="">
+                <img src="img/spotify/thumbzone.png" alt="Image of the thumb zone">
             </div>
             <a href="img/spotify/hta.png">
-                <img class="full-img" src="img/spotify/hta.png" alt="">
+                <img class="full-img" src="img/spotify/hta.png" alt="Heuristic task analysis diagram">
             </a>
         </div>
     </section>
@@ -108,15 +119,15 @@
                 <p>The empirical evuluation started pilot study to confirm some of the results from the theoretical evaluation and provide more data for the design of the usability test. Multiple persons, both experienced and new users, were asked to explain the functions and consequences of different buttons and icons.</p>
             </div>
             <div>
-                <img class="double" src="img/spotify/pilot.png" alt="">
+                <img class="double" src="img/spotify/pilot.png" alt="Image of spotify interface used for pilot study">
             </div>
         </div>
         <div class="col-2">
             <div>
-                <img class="double" src="img/spotify/pilot-right.png" alt="">
+                <img class="double" src="img/spotify/pilot-right.png" alt="Diagram of how many persons guessed right in pilot study">
             </div>
             <div>
-                <img class="double" src="img/spotify/pilot-certain.png" alt="">
+                <img class="double" src="img/spotify/pilot-certain.png" alt="Diagram of how sure the persons were about being correct">
             </div>
             
         </div>
@@ -131,7 +142,7 @@
             <h2>Research Findings</h2>
             <div>
                 <p>
-                    <img id="tested-scenarios" src="img/spotify/tested-scenarios.png" alt="">
+                    <img id="tested-scenarios" src="img/spotify/tested-scenarios.png" alt="Diagram of how well the test persons did in the first usability test">
                     The evaluation of the icons matched pretty well between the pilot study and the first usability test. Many users had problems understanding what the play queue icon was along with the plus icon that adds songs to your library. Users were also uncertain where the songs was saved by pressing it. <br class="margin">
 
                     In the tested scenarios a few users had initial trouble searching for a song but everyone managed to do it without help.<br class="margin">
@@ -151,8 +162,8 @@
         <h2>Redesign</h2>
         <div class="col-1-1 reversed">
             <div class="img-double">
-                <img src="img/spotify/old-cover.jpg" alt="">
-                <img src="img/spotify/old-animated.jpg" alt="">
+                <img src="img/spotify/old-cover.jpg" alt="Screenshot from spotifys old playback interface">
+                <img src="img/spotify/old-animated.jpg" alt="Screenshot from spotifys interface for animated backgrounds">
             </div>
             <div>
                 <h3>Starting Point</h3>
@@ -165,7 +176,7 @@
                 <p>The playback UI has some minor changes to increase the usability. The plus icon is moved to the “three dot” menu on the right side, few of the testers knew or understood the purpose of the button and the ones who did rarely used it. In the menu screen the purpose is clarified by copy. In the menu the add to library button will be accompanied by features such as: add to play queue, add to playlist, share, go to radio, show album, show artist report explicit content, creators, etc. The playqueue itself is no longer reached through this menu, it is instead reached from a direct button at bottom left of the screen, next to the “Available units” menu. The buttons will turn green when active as the “Available units” curently does.</p>
             </div>
             <div>
-                <img src="img/spotify/spotify-uppspelning-redesign.png" alt="">
+                <img src="img/spotify/spotify-uppspelning-redesign.jpg" alt="Image of our redesign of the playback interface">
             </div>
         </div>
         
@@ -174,9 +185,9 @@
             <p>The redesigned play queue appears as a modal pop-up from the bottom of the screen when the “Play Queue” button is pressed. The playback is slightly visible in the background. It says “Play Queue” at the top and a clear all button is located at the top right. The currently playing song is colored green nd located at the top of the screen. The following song is next to it, but white. A bin button is placed next to each song the songs can now be removed with one click instead of two. The symbol for drag and drop is changed to one with more visual ques. The UI will show five upcoming songs, the sixth will be barely visible to provide visual ques of the possibility of scrolling. Songs can no longer be started by pressing them to reduce the risk of interupting the current song accidently. To get back to the playback screen the user either tap outside the modal screen or on the arrow in the upper left. </p>
         </div>
         <div id="redesign-queue">
-            <img src="img/spotify/old-queue.jpg" alt="">
-            <img class="arrow" src="img/icons/arrow-right-large.png" alt="">
-            <img src="img/spotify/new-queue.jpg" alt="">
+            <img src="img/spotify/old-queue.jpg" alt="Screenshot of old playqueue">
+            <img class="arrow" src="img/icons/arrow-right-large.png" alt="arrow pointing to the right">
+            <img src="img/spotify/new-queue.jpg" alt="Image of our new design of the playqueue">
         </div>
         <div class="col-3-1">
             <div>
@@ -184,7 +195,7 @@
                 <p>To not refine the home screen UI was a limitation made early in the project but since the user reach the playback UI from this screen some modification were made. The song is still visible in the minified playback screen at the bottom of the screen. Previously it only said “Devices available” but now there is also an icon for the “Play queue” that indicates that whene there is a song in the queue and how many.</p>
             </div>
             <div>
-                <img src="img/spotify/new-homescreen.jpg" alt="">
+                <img src="img/spotify/new-homescreen.jpg" alt="Image of the spotify homescreen with our redesigned minifed playback screen">
             </div>
         </div>
     </section>
@@ -206,8 +217,8 @@
                 <p>The redesign of the “Play queue” resultet in better usability then the original but to improve it even further we investigated the micro interactions of the drag and drop function. In the final test users still tries to press the icon, visual ques as small animations are added to the icon. If the user taps on the name of the song the arrows of the icon will move out and fade back to pull the attention of the user. The item will lifts up slightly from the other items when the icon is tapped, that provides the user the visual cues of it being a drag and dropable element.</p>
             </div>
             <div class="img-double">
-                <img src="img/spotify/new-drag-cue.png" alt="">
-                <img src="img/spotify/new-handle-cue.png" alt="">
+                <img src="img/spotify/new-drag-cue.png" alt="Image of a micro interaction giving guidance to drag the objects in the play queue">
+                <img src="img/spotify/new-handle-cue.png" alt="Image describing the micro interactin giving the user guidance in where to pull the object in the playqueue">
             </div>
             
 
@@ -225,7 +236,7 @@
             </a>
         </div>
         <div>
-            <a class="flex-container project-link" href="bio.html" aria-label="Link to about page page">
+            <a class="flex-container project-link" href="bio.html" aria-label="Link to about page">
                 <span class="number">About</span>
                 <svg class="right" width="60" height="36" viewBox="0 0 60 36" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"

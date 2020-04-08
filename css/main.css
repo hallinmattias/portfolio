@@ -19,7 +19,12 @@ CSS Inspired by:
   margin: 0;
 }
 
+html {
+  overflow-y: overlay;
+}
+
 body {
+  width: 100%;
   font-size: 16px;
   font-family: "Montserrat", Helvetica, sans-serif;
   font-weight: 400;
@@ -454,6 +459,24 @@ header {
   flex-direction: column;
 }
 
+.project-banner-strava {
+  width: 100%;
+  height: 100vh;
+  background-color: #32332E;
+  background-image: url(../img/strava/strava-phone-web-2.jpg);
+  background-size: cover;
+  background-position: center center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .project-banner-logo {
   display: -webkit-box;
   display: -moz-box;
@@ -483,6 +506,17 @@ header {
   border-left: solid 3px #F9FAF8;
 }
 
+@media (max-width: 40rem) {
+  .project-banner-logo {
+    width: 100%;
+    padding: 0 .5em .5em;
+  }
+  .project-banner-logo span {
+    font-size: 7vw;
+    padding-left: 3vw;
+  }
+}
+
 .project-header {
   display: -webkit-box;
   display: -moz-box;
@@ -499,6 +533,13 @@ header {
   padding: 1em;
 }
 
+@media (max-width: 25rem) {
+  .project-header {
+    overflow: auto;
+    white-space: nowrap;
+  }
+}
+
 .project-body {
   display: -webkit-box;
   display: -moz-box;
@@ -511,6 +552,7 @@ header {
   flex-direction: column;
   padding: 1em;
   max-width: 56.25rem;
+  width: 100%;
   margin: 2rem auto;
   justify-content: center;
 }
@@ -559,7 +601,7 @@ header {
     -ms-flex-direction: column;
     flex-direction: column;
     padding: 1rem;
-    margin: auto auto;
+    margin: auto auto 2rem;
     width: 100%;
     align-items: center;
   }
@@ -778,8 +820,32 @@ header {
 }
 
 /*
-    Spotify specific
+    --------------------------------- Spotify specific ---------------------------------
 */
+#spotify-banner-photo {
+  display: flex;
+  width: 100%;
+  height: auto;
+  padding: 1em;
+  max-width: 80rem;
+  margin: auto;
+  max-height: 50vh;
+  align-items: center;
+  justify-content: center;
+}
+
+#spotify-banner-photo img {
+  width: auto;
+  height: 100%;
+  max-height: 50vh;
+}
+
+@media (max-width: 40rem) {
+  #spotify-banner-photo {
+    max-width: 100%;
+  }
+}
+
 #background {
   margin-top: 0;
 }
@@ -802,36 +868,64 @@ header {
 }
 
 .slanted-top {
-  width: 100%;
-  height: auto;
+  position: relative;
 }
 
 .slanted-top::after {
   content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   border-style: solid;
   border-color: transparent;
-  border-width: 10vh 100vw;
+  border-width: 5vh 50vw;
   border-bottom-color: #32332E;
-  border-left-color: #32332E;
+  border-right-color: #32332E;
 }
 
-.slanted-bottom::before {
+.slanted-middle {
+  position: relative;
+}
+
+.slanted-middle::after {
   content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   border-style: solid;
   border-color: transparent;
-  border-width: 10vh 100vw;
+  border-width: 5vh 50vw;
   border-bottom-color: #F9FAF8;
-  border-left-color: #F9FAF8;
+  border-right-color: #F9FAF8;
+}
+
+.slanted-bottom {
+  /*
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            top: -20vh;
+            left: 0;
+            right: 0;
+            border-style: solid;
+            border-color: transparent;
+            border-width: 5vh 50vw;
+            border-bottom-color: $color-light;
+            border-left-color: $color-light;
+        }*/
 }
 
 .slanted-container-left {
   max-width: 23.75rem;
-  padding-bottom: 5vh;
+  padding-top: 5vh;
 }
 
 .slanted-container-right {
   max-width: 23.75rem;
-  padding-top: 5vh;
+  padding-bottom: 5vh;
 }
 
 .slanted-body {
@@ -848,6 +942,10 @@ header {
   padding: 0 1em;
   max-width: 56.25rem;
   margin: 0 auto 10vh;
+}
+
+.slanted-body h2 {
+  margin-top: 0;
 }
 
 #tested-scenarios {
@@ -902,6 +1000,27 @@ header {
 /*
     Strava specicic
 */
+#strava-sketch {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  max-width: 40rem;
+  height: auto;
+  margin: 2rem auto;
+}
+
+#strava-sketch img {
+  width: 100%;
+  height: auto;
+}
+
 .col-2 {
   margin: 1rem 0;
   display: -webkit-box;

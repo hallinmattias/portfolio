@@ -4,6 +4,8 @@
 //      https://css-tricks.com/snippets/css/complete-guide-grid/
 //      https://stackoverflow.com/questions/1409649/how-to-change-the-height-of-a-br
 //      Slanted Background: https://codepen.io/igstudio/pen/NxgOBp
+//      https://stackoverflow.com/questions/6999257/vertical-scrollbar-position-absolute
+//      https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_menu_hor_scroll
 
 $color-background: #32332E;
 $color-body-copy: #32332E;
@@ -96,7 +98,14 @@ CSS Inspired by:
     padding: 0;
     margin: 0;
 }
+html{
+    overflow-y: overlay;
+    //overflow-x: hidden;
+}
+
 body{
+    //padding-right: 1rem;
+    width: 100%;
     font-size: 16px;
     font-family: $font-body;
     font-weight: 400;
@@ -438,6 +447,17 @@ header{
             }
             @include flexbox(column);
         }
+        &-strava{
+            width: 100%;
+            height: 100vh;
+            background: {
+                color: $color-dark;
+                image: url(../img/strava/strava-phone-web-2.jpg);
+                size: cover;
+                position: center center;
+            }
+            @include flexbox(column);
+        }
         &-logo{
             @include flexbox();
             margin: auto 1rem 2rem auto;
@@ -455,6 +475,14 @@ header{
                 padding-left: 1.5rem;
                 border-left: solid 3px $color-light;
             }
+            @media (max-width: 40rem) {
+                width: 100%;
+                padding: 0 .5em .5em;
+                span{
+                    font-size: 7vw;
+                    padding-left: 3vw;
+                }
+            }
         }
     }
     &-header{
@@ -463,12 +491,17 @@ header{
         justify-content: space-between;
         align-items: flex-start;
         padding: 1em;
+        @media (max-width: 25rem){
+            overflow: auto;
+            white-space: nowrap;
+        }
     }
 
     &-body{
         @include flexbox(column);
         padding: 1em;
         max-width: 56.25rem;
+        width: 100%;
         margin: 2rem auto;
         justify-content: center;
         img{
@@ -502,7 +535,7 @@ header{
             &-logo{
                 @include flexbox(column);
                 padding: 1rem;
-                margin: auto auto;
+                margin: auto auto 2rem;
 
                 width: 100%;
                 align-items: center;
@@ -670,8 +703,28 @@ header{
 }
 
 /*
-    Spotify specific
+    --------------------------------- Spotify specific ---------------------------------
 */
+#spotify-banner-photo{
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding: 1em;
+    max-width: 80rem;
+    margin: auto;
+    max-height: 50vh;
+    align-items: center;
+    justify-content: center;
+    img{
+        width: auto;
+        height: 100%;
+        max-height: 50vh;
+    }
+    @media (max-width:40rem) {
+        max-width: 100%;
+    }
+}
+
 #background{
     margin-top: 0;
 }
@@ -682,39 +735,60 @@ header{
 .slanted{
     @include flexbox(column);
     &-top{
-        width: 100%;
-        height: auto;
+        position: relative;
         &::after{
             content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
             border-style: solid;
             border-color: transparent;
-            border-width: 10vh 100vw;
+            border-width: 5vh 50vw;
             border-bottom-color: $color-dark;
-            border-left-color: $color-dark;
+            border-right-color: $color-dark;
         }
     }
     &-middle{
-    }
-    &-bottom{
-        &::before{
+        position: relative;
+        &::after{
             content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
             border-style: solid;
             border-color: transparent;
-            border-width: 10vh 100vw;
+            border-width: 5vh 50vw;
+            border-bottom-color: $color-light;
+            border-right-color: $color-light;
+        }
+    }
+    &-bottom{/*
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            top: -20vh;
+            left: 0;
+            right: 0;
+            border-style: solid;
+            border-color: transparent;
+            border-width: 5vh 50vw;
             border-bottom-color: $color-light;
             border-left-color: $color-light;
-        }
+        }*/
     }
     &-container{
         
         &-left{
             max-width: 23.75rem;
-            padding-bottom: 5vh;
+            padding-top: 5vh;
         }
 
         &-right{
             max-width: 23.75rem;
-            padding-top: 5vh;
+            padding-bottom: 5vh;
         }
     }
     &-body{
@@ -723,6 +797,9 @@ header{
         padding: 0 1em;
         max-width: 56.25rem;
         margin: 0 auto 10vh;
+        h2{
+            margin-top:0;
+        }
     }
 }
 #tested-scenarios{
@@ -767,7 +844,17 @@ header{
 /*
     Strava specicic
 */
-
+#strava-sketch{
+    @include flexbox();
+    width: 100%;
+    max-width: 40rem;
+    height: auto;
+    margin: 2rem auto;
+    img{
+        width: 100%;
+        height: auto;
+    }
+}
 
 .col-2{
     margin: 1rem 0;
