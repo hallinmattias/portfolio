@@ -54,6 +54,10 @@ body {
   flex-direction: row;
 }
 
+.no-stretch {
+  align-items: center;
+}
+
 .left {
   justify-self: flex-start;
 }
@@ -780,7 +784,7 @@ header {
   margin: 0 auto;
 }
 
-.col-1-1 div.img-double {
+.col-1-1 div .img-double {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -791,13 +795,14 @@ header {
   -ms-flex-direction: row;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
 }
 
-.col-1-1 div.img-double img:first-of-type {
+.col-1-1 div .img-double img:first-of-type {
   margin-right: 4%;
 }
 
-.col-1-1 div.img-double img {
+.col-1-1 div .img-double img {
   margin: 0;
   width: 48%;
   height: auto;

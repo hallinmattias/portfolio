@@ -118,7 +118,9 @@ body{
 .flex-container{
     @include flexbox();
 }
-
+.no-stretch{
+    align-items: center;
+}
 .left{
     justify-self: flex-start;
 }
@@ -675,9 +677,10 @@ header{
             max-width: 15rem;
             margin: 0 auto;
         }
-        &.img-double{
+        .img-double{
             @include flexbox();
             justify-content: center;
+            align-items: center;
             img:first-of-type{
                 margin-right: 4%;
             }
