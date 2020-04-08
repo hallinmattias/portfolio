@@ -1,11 +1,5 @@
 //      Mixins inpired by: 
 //      Sass for webdesigners - Cederholm
-//      https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-//      https://css-tricks.com/snippets/css/complete-guide-grid/
-//      https://stackoverflow.com/questions/1409649/how-to-change-the-height-of-a-br
-//      Slanted Background: https://codepen.io/igstudio/pen/NxgOBp
-//      https://stackoverflow.com/questions/6999257/vertical-scrollbar-position-absolute
-//      https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_menu_hor_scroll
 
 $color-background: #32332E;
 $color-body-copy: #32332E;
@@ -43,14 +37,19 @@ $font-number: 'Montserrat', Helvetica, sans-serif;
     display: -webkit-flex;
     display: flex;
 
-    align-items: center;
-    -webkit-align-items: center;
-    
+    //align-items: flex-start;
+    //-webkit-align-items: flex-start;
+
 
     -webkit-flex-direction: $direction;
     -moz-flex-direction: $direction;
     -ms-flex-direction: $direction;
     flex-direction: $direction;
+}
+
+@mixin align-items($direction) {
+    -webkit-align-items: $direction;
+    align-items: $direction;
 }
 
 @mixin linear-gradient($from, $to) {
@@ -91,6 +90,12 @@ CSS Inspired by:
     https://www.w3schools.com/howto/howto_css_menu_horizontal_scroll.asp
     https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_word-wrap
     https://www.w3schools.com/css/css_positioning.asp
+    https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+    https://css-tricks.com/snippets/css/complete-guide-grid/
+    https://stackoverflow.com/questions/1409649/how-to-change-the-height-of-a-br
+    Slanted Background: https://codepen.io/igstudio/pen/NxgOBp
+    https://stackoverflow.com/questions/6999257/vertical-scrollbar-position-absolute
+    https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_menu_hor_scroll
 */
 
 /*
@@ -121,10 +126,16 @@ body{
 
 .flex-container{
     @include flexbox();
-
 }
+
 .no-stretch{
+    @include flexbox();
     align-items: center;
+    -webkit-align-items: center;
+}
+.no-stretch-self{
+    align-self: center;
+    -webkit-align-self: center;
 }
 .left{
     justify-self: flex-start;
@@ -284,9 +295,6 @@ header{
 /*
     ----------- Homescreen Right Column -------------
 */
-#strava{
-    
-}
 .project{
     @include flexbox(column);
     width: 100%;
@@ -409,7 +417,9 @@ header{
     }
 }
 
-
+.nav{
+    margin-left: auto;
+}
 
 
 
@@ -681,15 +691,10 @@ header{
             height: auto;
             max-width: 15rem;
             margin: 0 auto;
-        }
-        .img-double{
-            @include flexbox();
-            justify-content: center;
-            align-items: center;
-            img:first-of-type{
+            .double:first-of-type{
                 margin-right: 4%;
             }
-            img{
+            .double{
                 margin: 0;
                 width: 48%;
                 height: auto;
@@ -697,6 +702,48 @@ header{
         }
         .double{
             max-width: none;
+        }
+    }
+    .img-double{
+        @include flexbox();
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        img:first-of-type{
+            margin-right: 4%;
+        }
+        img{
+            margin: 0;
+            width: 48%;
+            height: auto;
+        }
+    }
+    @media (max-width:44rem) {
+        flex-wrap: wrap;
+        .reversed{
+            flex-wrap: wrap-reverse;
+        }
+        div{
+            width: 100%;
+        }
+    }
+}
+
+.col-1-1-v2{
+    margin: 1rem 0;
+    @include flexbox();
+    align-items: center;
+    justify-content: space-between;
+    div{
+        width: 45%;
+        img{
+            width: 48%;
+            height: auto;
+            max-width: none;
+            margin: 0;
+        }
+        img:first-of-type{
+            margin-right: 4%;
         }
     }
     @media (max-width:44rem) {
@@ -771,21 +818,6 @@ header{
             border-bottom-color: $color-light;
             border-right-color: $color-light;
         }
-    }
-    &-bottom{/*
-        position: relative;
-        &::before{
-            content: "";
-            position: absolute;
-            top: -20vh;
-            left: 0;
-            right: 0;
-            border-style: solid;
-            border-color: transparent;
-            border-width: 5vh 50vw;
-            border-bottom-color: $color-light;
-            border-left-color: $color-light;
-        }*/
     }
     &-container{
         
@@ -950,6 +982,7 @@ footer{
     @include flexbox();
     padding: 1em;
     justify-content: space-between;
+    width: 100%;
 }
 footer.first{
     justify-content: flex-end;

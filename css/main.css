@@ -7,6 +7,12 @@ CSS Inspired by:
     https://www.w3schools.com/howto/howto_css_menu_horizontal_scroll.asp
     https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_word-wrap
     https://www.w3schools.com/css/css_positioning.asp
+    https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+    https://css-tricks.com/snippets/css/complete-guide-grid/
+    https://stackoverflow.com/questions/1409649/how-to-change-the-height-of-a-br
+    Slanted Background: https://codepen.io/igstudio/pen/NxgOBp
+    https://stackoverflow.com/questions/6999257/vertical-scrollbar-position-absolute
+    https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_menu_hor_scroll
 */
 /*
     ----------- GENERAL -------------
@@ -36,8 +42,6 @@ body {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
-  -webkit-align-items: center;
   -webkit-flex-direction: column;
   -moz-flex-direction: column;
   -ms-flex-direction: column;
@@ -50,8 +54,6 @@ body {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
-  -webkit-align-items: center;
   -webkit-flex-direction: row;
   -moz-flex-direction: row;
   -ms-flex-direction: row;
@@ -59,7 +61,22 @@ body {
 }
 
 .no-stretch {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   align-items: center;
+  -webkit-align-items: center;
+}
+
+.no-stretch-self {
+  align-self: center;
+  -webkit-align-self: center;
 }
 
 .left {
@@ -197,8 +214,6 @@ header {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
-  -webkit-align-items: center;
   -webkit-flex-direction: column;
   -moz-flex-direction: column;
   -ms-flex-direction: column;
@@ -217,8 +232,6 @@ header {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
-  -webkit-align-items: center;
   -webkit-flex-direction: row;
   -moz-flex-direction: row;
   -ms-flex-direction: row;
@@ -258,8 +271,6 @@ header {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
-  -webkit-align-items: center;
   -webkit-flex-direction: column;
   -moz-flex-direction: column;
   -ms-flex-direction: column;
@@ -303,8 +314,6 @@ header {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
-  -webkit-align-items: center;
   -webkit-flex-direction: row;
   -moz-flex-direction: row;
   -ms-flex-direction: row;
@@ -427,6 +436,10 @@ header {
   border-bottom: solid 1.3px #E1E2DD;
 }
 
+.nav {
+  margin-left: auto;
+}
+
 .nav-active {
   border-bottom: solid 1.3px #3A5864;
 }
@@ -469,8 +482,6 @@ header {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
-  -webkit-align-items: center;
   -webkit-flex-direction: column;
   -moz-flex-direction: column;
   -ms-flex-direction: column;
@@ -489,8 +500,6 @@ header {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
-  -webkit-align-items: center;
   -webkit-flex-direction: column;
   -moz-flex-direction: column;
   -ms-flex-direction: column;
@@ -503,8 +512,6 @@ header {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
-  -webkit-align-items: center;
   -webkit-flex-direction: row;
   -moz-flex-direction: row;
   -ms-flex-direction: row;
@@ -545,8 +552,6 @@ header {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
-  -webkit-align-items: center;
   -webkit-flex-direction: row;
   -moz-flex-direction: row;
   -ms-flex-direction: row;
@@ -570,8 +575,6 @@ header {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
-  -webkit-align-items: center;
   -webkit-flex-direction: column;
   -moz-flex-direction: column;
   -ms-flex-direction: column;
@@ -594,8 +597,6 @@ header {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
-  -webkit-align-items: center;
   -webkit-flex-direction: column;
   -moz-flex-direction: column;
   -ms-flex-direction: column;
@@ -624,8 +625,6 @@ header {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    align-items: center;
-    -webkit-align-items: center;
     -webkit-flex-direction: column;
     -moz-flex-direction: column;
     -ms-flex-direction: column;
@@ -710,8 +709,6 @@ header {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
-  -webkit-align-items: center;
   -webkit-flex-direction: row;
   -moz-flex-direction: row;
   -ms-flex-direction: row;
@@ -753,8 +750,6 @@ header {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
-  -webkit-align-items: center;
   -webkit-flex-direction: row;
   -moz-flex-direction: row;
   -ms-flex-direction: row;
@@ -795,8 +790,6 @@ header {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
-  -webkit-align-items: center;
   -webkit-flex-direction: row;
   -moz-flex-direction: row;
   -ms-flex-direction: row;
@@ -816,27 +809,11 @@ header {
   margin: 0 auto;
 }
 
-.col-1-1 div .img-double {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  align-items: center;
-  -webkit-align-items: center;
-  -webkit-flex-direction: row;
-  -moz-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.col-1-1 div .img-double img:first-of-type {
+.col-1-1 div img .double:first-of-type {
   margin-right: 4%;
 }
 
-.col-1-1 div .img-double img {
+.col-1-1 div img .double {
   margin: 0;
   width: 48%;
   height: auto;
@@ -844,6 +821,31 @@ header {
 
 .col-1-1 div .double {
   max-width: none;
+}
+
+.col-1-1 .img-double {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.col-1-1 .img-double img:first-of-type {
+  margin-right: 4%;
+}
+
+.col-1-1 .img-double img {
+  margin: 0;
+  width: 48%;
+  height: auto;
 }
 
 @media (max-width: 44rem) {
@@ -854,6 +856,48 @@ header {
     flex-wrap: wrap-reverse;
   }
   .col-1-1 div {
+    width: 100%;
+  }
+}
+
+.col-1-1-v2 {
+  margin: 1rem 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.col-1-1-v2 div {
+  width: 45%;
+}
+
+.col-1-1-v2 div img {
+  width: 48%;
+  height: auto;
+  max-width: none;
+  margin: 0;
+}
+
+.col-1-1-v2 div img:first-of-type {
+  margin-right: 4%;
+}
+
+@media (max-width: 44rem) {
+  .col-1-1-v2 {
+    flex-wrap: wrap;
+  }
+  .col-1-1-v2 .reversed {
+    flex-wrap: wrap-reverse;
+  }
+  .col-1-1-v2 div {
     width: 100%;
   }
 }
@@ -900,8 +944,6 @@ header {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
-  -webkit-align-items: center;
   -webkit-flex-direction: column;
   -moz-flex-direction: column;
   -ms-flex-direction: column;
@@ -942,23 +984,6 @@ header {
   border-right-color: #F9FAF8;
 }
 
-.slanted-bottom {
-  /*
-        position: relative;
-        &::before{
-            content: "";
-            position: absolute;
-            top: -20vh;
-            left: 0;
-            right: 0;
-            border-style: solid;
-            border-color: transparent;
-            border-width: 5vh 50vw;
-            border-bottom-color: $color-light;
-            border-left-color: $color-light;
-        }*/
-}
-
 .slanted-container-left {
   max-width: 23.75rem;
   padding-top: 5vh;
@@ -975,8 +1000,6 @@ header {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
-  -webkit-align-items: center;
   -webkit-flex-direction: row;
   -moz-flex-direction: row;
   -ms-flex-direction: row;
@@ -1018,8 +1041,6 @@ header {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
-  -webkit-align-items: center;
   -webkit-flex-direction: row;
   -moz-flex-direction: row;
   -ms-flex-direction: row;
@@ -1051,8 +1072,6 @@ header {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
-  -webkit-align-items: center;
   -webkit-flex-direction: row;
   -moz-flex-direction: row;
   -ms-flex-direction: row;
@@ -1075,8 +1094,6 @@ header {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
-  -webkit-align-items: center;
   -webkit-flex-direction: row;
   -moz-flex-direction: row;
   -ms-flex-direction: row;
@@ -1112,8 +1129,6 @@ header {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
-  -webkit-align-items: center;
   -webkit-flex-direction: row;
   -moz-flex-direction: row;
   -ms-flex-direction: row;
@@ -1140,8 +1155,6 @@ header {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
-  -webkit-align-items: center;
   -webkit-flex-direction: row;
   -moz-flex-direction: row;
   -ms-flex-direction: row;
@@ -1182,8 +1195,6 @@ header {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    align-items: center;
-    -webkit-align-items: center;
     -webkit-flex-direction: column;
     -moz-flex-direction: column;
     -ms-flex-direction: column;
@@ -1200,14 +1211,13 @@ footer {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
-  -webkit-align-items: center;
   -webkit-flex-direction: row;
   -moz-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
   padding: 1em;
   justify-content: space-between;
+  width: 100%;
 }
 
 footer.first {
@@ -1283,8 +1293,6 @@ footer.last {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
-  -webkit-align-items: center;
   -webkit-flex-direction: row;
   -moz-flex-direction: row;
   -ms-flex-direction: row;
