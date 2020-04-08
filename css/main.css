@@ -121,8 +121,18 @@ ul {
   margin-left: 1em;
 }
 
+br.margin {
+  display: block;
+  content: "";
+  margin-top: .5rem;
+}
+
 .fas {
   margin-right: .5em;
+}
+
+.fa-mobile {
+  margin-right: 1rem;
 }
 
 .copyright {
@@ -130,6 +140,10 @@ ul {
   color: #3A5864;
   text-align: center;
   padding: 1em 0;
+}
+
+.centered {
+  text-align: center;
 }
 
 /*
@@ -319,7 +333,7 @@ header {
 }
 
 .project-link-dark {
-  align-self: flex-end;
+  align-self: flex-start;
   height: auto;
   color: #F9FAF8;
 }
@@ -374,24 +388,30 @@ header {
   border-color: #E1E2DD;
 }
 
-.project-header {
-  width: 100%;
-  justify-content: space-between;
-  padding: 1em;
-  /*position: absolute;
-    overflow: auto;
-    white-space: nowrap;
-    top: 0;
-    left: 0;
-    right: 0;*/
-}
-
 .nav-item {
   margin: 0 .5em;
 }
 
+.nav-item:hover {
+  border-bottom: solid 1.3px #729BA9;
+}
+
+.nav-item-dark {
+  margin: 0 .5em;
+  color: #F9FAF8;
+}
+
+.nav-item-dark:hover {
+  color: #E1E2DD;
+  border-bottom: solid 1.3px #E1E2DD;
+}
+
 .nav-active {
   border-bottom: solid 1.3px #3A5864;
+}
+
+.nav-active-dark {
+  border-bottom: solid 1.3px #F9FAF8;
 }
 
 .nav-item:hover {
@@ -417,10 +437,24 @@ header {
     }
 }
 */
-.project-banner {
-  background-color: #F9FAF8;
+.project-banner-2 {
   width: 100%;
-  height: auto;
+  height: 100vh;
+  background-color: #32332E;
+  background-image: url(../img/spotify/dj-mixer-hands-set.jpg);
+  background-size: cover;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.project-banner-logo {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -430,7 +464,148 @@ header {
   -moz-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  margin: auto 1rem 2rem auto;
+  width: 40rem;
+  align-items: center;
+}
+
+.project-banner-logo img {
+  padding-right: 1.5rem;
+  width: 50%;
+  height: auto;
+}
+
+.project-banner-logo span {
+  font-size: 1.75rem;
+  color: #F9FAF8;
+  width: 50%;
+  padding-left: 1.5rem;
+  border-left: solid 3px #F9FAF8;
+}
+
+.project-header {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1em;
+}
+
+.project-body {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 1em;
+  max-width: 56.25rem;
+  margin: 2rem auto;
   justify-content: center;
+}
+
+.project-body img {
+  width: 100%;
+  height: auto;
+}
+
+.project-body-wide {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 2rem 5%;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.project-body-wide img {
+  margin: 1rem 0;
+}
+
+.project-info p {
+  font-size: 1.2rem;
+}
+
+.project-recap {
+  margin: 1rem 0;
+}
+
+@media (max-width: 40rem) {
+  .project-banner-logo {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 1rem;
+    margin: auto auto;
+    width: 100%;
+    align-items: center;
+  }
+  .project-banner-logo img {
+    padding: 0;
+    width: 70%;
+    height: auto;
+  }
+  .project-banner-logo span {
+    width: 70%;
+    margin-top: 1.5rem;
+    padding: 0 0 0 1.5rem;
+  }
+}
+
+.bg-dark {
+  background-color: #32332E;
+  color: #F9FAF8;
+}
+
+.bg-wide {
+  width: 100%;
+}
+
+.full-img {
+  width: 100%;
+  height: auto;
+}
+
+#theoretical-eval {
+  display: flex;
+  flex-basis: auto;
+  margin-bottom: 1rem;
+}
+
+#theoretical-eval img {
+  align-self: center;
+  flex-basis: auto;
+  width: 15.6rem;
+  height: auto;
+}
+
+@media (max-width: 50rem) {
+  #theoretical-eval {
+    flex-direction: column;
+  }
 }
 
 .banner-img {
@@ -451,7 +626,170 @@ header {
   fill: #F9FAF8;
 }
 
-.project-body {
+.col-1 {
+  margin: 2rem 0;
+}
+
+.col-3-1 {
+  width: 100%;
+  margin: 2rem 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.col-3-1 div:first-child {
+  width: 70%;
+}
+
+.col-3-1 div:last-child {
+  margin: 0 auto;
+  width: 20%;
+}
+
+.col-3-1 div img {
+  max-width: 30rem;
+}
+
+@media (max-width: 44rem) {
+  .col-3-1 {
+    flex-wrap: wrap;
+  }
+  .col-3-1 div:first-child {
+    width: 100%;
+  }
+  .col-3-1 div:last-child {
+    width: 100%;
+  }
+}
+
+.col-2-1 {
+  width: 100%;
+  margin: 1rem 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.col-2-1 div:first-child {
+  width: 60%;
+}
+
+.col-2-1 div:last-child {
+  margin: 0 auto;
+  width: 30%;
+}
+
+.col-2-1 div img {
+  max-width: 30rem;
+}
+
+@media (max-width: 44rem) {
+  .col-2-1 {
+    flex-wrap: wrap;
+  }
+  .col-2-1 div:first-child {
+    width: 100%;
+  }
+  .col-2-1 div:last-child {
+    width: 100%;
+  }
+}
+
+.col-1-1 {
+  margin: 1rem 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.col-1-1 div {
+  width: 45%;
+}
+
+.col-1-1 div img {
+  width: 100%;
+  height: auto;
+  max-width: 15rem;
+  margin: 0 auto;
+}
+
+.col-1-1 div.img-double {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.col-1-1 div.img-double img:first-of-type {
+  margin-right: 4%;
+}
+
+.col-1-1 div.img-double img {
+  margin: 0;
+  width: 48%;
+  height: auto;
+}
+
+.col-1-1 div .double {
+  max-width: none;
+}
+
+@media (max-width: 44rem) {
+  .col-1-1 {
+    flex-wrap: wrap;
+  }
+  .col-1-1 .reversed {
+    flex-wrap: wrap-reverse;
+  }
+  .col-1-1 div {
+    width: 100%;
+  }
+}
+
+/*
+    Spotify specific
+*/
+#background {
+  margin-top: 0;
+}
+
+#intro {
+  margin-bottom: 10vh;
+  flex-wrap: wrap;
+}
+
+.slanted {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -461,20 +799,104 @@ header {
   -moz-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 100vh;
-  padding: 1em;
-  max-width: 56.25rem;
-  margin: 0 auto;
-  justify-content: center;
 }
 
-.project-body img {
+.slanted-top {
   width: 100%;
   height: auto;
 }
 
-.project-info p {
-  font-size: 1.2rem;
+.slanted-top::after {
+  content: "";
+  border-style: solid;
+  border-color: transparent;
+  border-width: 10vh 100vw;
+  border-bottom-color: #32332E;
+  border-left-color: #32332E;
+}
+
+.slanted-bottom::before {
+  content: "";
+  border-style: solid;
+  border-color: transparent;
+  border-width: 10vh 100vw;
+  border-bottom-color: #F9FAF8;
+  border-left-color: #F9FAF8;
+}
+
+.slanted-container-left {
+  max-width: 23.75rem;
+  padding-bottom: 5vh;
+}
+
+.slanted-container-right {
+  max-width: 23.75rem;
+  padding-top: 5vh;
+}
+
+.slanted-body {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 1em;
+  max-width: 56.25rem;
+  margin: 0 auto 10vh;
+}
+
+#tested-scenarios {
+  width: 50%;
+  height: auto;
+  float: right;
+  padding-left: 5%;
+}
+
+@media (max-width: 50rem) {
+  #tested-scenarios {
+    width: 100%;
+    height: auto;
+    max-width: 30rem;
+    float: none;
+    padding: 0;
+    margin: 1rem auto;
+  }
+  br.margin {
+    margin-top: 1rem;
+  }
+}
+
+#redesign-queue {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  max-width: 40rem;
+  margin: 2rem auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#redesign-queue img {
+  width: 36%;
+  flex-shrink: 2;
+}
+
+#redesign-queue .arrow {
+  width: 20%;
+  margin: 0 4%;
+  flex-shrink: 1;
 }
 
 /*
@@ -504,6 +926,11 @@ header {
   height: auto;
   max-width: 15rem;
   margin: 0 auto;
+}
+
+.col-2 div img .double-img {
+  width: 45%;
+  height: auto;
 }
 
 .col-2 div .double {
