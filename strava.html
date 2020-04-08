@@ -9,83 +9,129 @@
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="icon" type="image/png" sizes="16x16" href="img//icons/favicon.png"> 
+    <link rel="icon" type="image/png" sizes="16x16" href="img//icons/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Sen&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b7fa542dc3.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body class="black">
-    <section class="project-banner">
-        <nav class="project-header flex-container">
-            <a class="flex-container project-link-dark" href="index.html">
+    <section class="project-banner-strava">
+        <nav class="project-header">
+            <a class="flex-container project-link-dark" href="index.html" aria-label="Link to homescreen">
                 <svg width="60" height="48" viewBox="0 0 60 48" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M2.56955 23.35L60 23.35L60 24.65L2.56963 24.65L8.45996 30.5404L7.54073 31.4596L0.0811087 24L7.54073 16.5404L8.45997 17.4596L2.56955 23.35Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.56955 23.35L60 23.35L60 24.65L2.56963 24.65L8.45996 30.5404L7.54073 31.4596L0.0811087 24L7.54073 16.5404L8.45997 17.4596L2.56955 23.35Z" />
                 </svg>
             </a>
             <div class="nav flex-container">
-                <a class="nav-active nav-item dark number" href="strava.html">P01.</a>
-                <a class="nav-item dark number" href="spotify.html">P02.</a>
-                <a class="nav-item dark number" href="bio.html">About</a>
+                <a class="nav-active-dark nav-item-dark number" href="strava.html" aria-label="Link to project 1">P01.</a>
+                <a class="nav-item-dark number" href="spotify.html" aria-label="Link to Project 2">P02.</a>
+                <a class="nav-item-dark number" href="bio.html" aria-label="Link to about page">About</a>
             </div>
         </nav>
-        <img src="img/strava-phone-web-2.jpg">
+
+        <div class="project-banner-logo">
+            <img src="img/strava/strava_logo_white.png" alt="strava logo">
+            <span>Team Challenges</span>
+        </div>
     </section>
+
     <section class="project-body">
-        <h1>Strava Team Challenges</h1>
-        <p><i class="fas fa-stethoscope"></i> App feature design case</p>
-        <p><i class="fas fa-mobile"></i> Android</p>
-        <p><i class="fas fa-clock"></i> January 2020- February 2020</p>
-        <p><i class="fas fa-briefcase"></i> User Research, UX Evaluation & UI Design</p>
-        <p><i class="fas fa-users"></i> Jenny Ho & Jessi Li</p>
-        <p><i class="fas fa-tools"></i> Figma, Adobe Photoshop, Adobe Illustrator</p>
-        <p><i class="fas fa-book"></i> Feature Teardown, Wireframing, Personas, etc.</p>
+        <div id="intro" class="project-body">
+            <div class="col-1-1">
+                <div class="centered project-recap">
+                    <h1>Strava Team Challenges</h1>
+                    <p>3 week app feature case as a part of the the course IAT334 Interface Design provided by School of Interactive Arts & Technology at Simon Fraser University in Vancouver, BC.</p>
+                </div>
+                <div>
+                    <p><i class="fas fa-stethoscope"></i> App feature design case</p>
+                    <p><i class="fas fa-mobile"></i> Android</p>
+                    <p><i class="fas fa-clock"></i> January 2020- February 2020</p>
+                    <p><i class="fas fa-briefcase"></i> User Research, UX Evaluation & UI Design</p>
+                    <p><i class="fas fa-users"></i> Jenny Ho & Jessi Li</p>
+                    <p><i class="fas fa-tools"></i> Figma, Adobe Photoshop, Adobe Illustrator</p>
+                    <p><i class="fas fa-book"></i> Feature Teardown, Wireframing, Personas, etc.</p>
+                </div>
+            </div>
+        </div>
 
+        <div class="col-1-1">
+            <div class="flex-container single">
+                <img class="shadow" src="img/strava/strava-feed2.jpg" alt="Screenshot of strava app feed">
+            </div>
+            <div class="text">
+                <h2>Background</h2>
 
-        <p>This project was a x week app feature case as a part of the the course IAT334 Interface Design provided by
-            School of Interactive Arts & Technology at Simon Fraser University in Vancouver, BC.</p>
+                <p>Strava is a social fitness app that allows fitness enthusiasts to track their exercise progress and share fitness activities with friends. Users can use Strava to join clubs, complete challenges, find local events, compare and share their activity with other users in their fitness network.</p>
+            </div>            
+        </div>
+        
+        <div>
+            <h2>Discover</h2>
+        
+            <p>
+                The research was focused on understanding how the users use the app and why they choose it in favor of other apps to find its unique selling points. Semi-structured interviews was carried out with individuals who have regular fitness routines. The questions focused on asking individuals about their fitness routines and exercise motivations/behaviours. Many Strava users are attracted to the social platform that differs from its competitors.
+            </p>
 
-
-        <p>The research phase was focused on understanding how the users use the app and why they choose it in favor of
-            other apps to find its unique selling points. Many Strava users are attracted to the social platform that
-            differs from its competitors.</p>
-
-        <p>Inside the app users can set goals and challenge each other on different challenges. Our work continued with
-            ideation on how a new feature could benefit from the social platform to make the social interactions in the
-            app even more attractive. Many features in the app that include interactions between users are competitive
-            between the users.</p>
-
-        <p> We wanted our feature to improve the social experience of the app and. Our final concept leveraged on the
-            social platform and allowed the users work together instead of competing against each other. We call the
-            feature Team Challenges. Users can group up and pick a fitting challenge to work on together.</p>
-
-        <h2>Background</h2>
-
-        <p>Strava is a social fitness app that allows fitness enthusiasts to track their exercise progress and share
-            fitness activities with friends. Users can use Strava to join clubs, complete challenges, find local events,
-            and compare and share their activity with other users in their fitness network.</p>
-
-        <h2>Problem Statement</h2>
-        <p>Strava brings athletes closer by sharing workout activities. However, most activities and challenges are
-            completed individually, with social involvement only after you share a post or activity.</p>
-
-        <h2>Research Findings</h2>
-
-        <h3>Positive social motivation</h3>
-
-        <p>Some athletes are motivated by knowing and seeing other people participating in the same activities, and
-            through social feedback such as likes and comment on their activities.</p>
-        <h3>Track Personal progress</h3>
-        <p>Many athletes want to keep track of their personal progress. Some share their progress with their friends to
-            receive social motivation, while others track it for personal motivation.</p>
-
-        <h2>Result</h2>
-        <img src="img/strava-result.png" alt="Image of Strava team challenges wire-flow">
-
-
-        <h2></h2>
+        </div>
+        
+        
+        <div>
+            <h2>Define</h2>
+            <p>
+                Strava brings athletes closer by sharing workout activities. However, most activities and challenges are completed individually, with social involvement only after you share a post or activity. Some athletes are motivated by knowing and seeing other people participating in the same activities, and through social feedback such as likes and comment on their activities. Many athletes want to keep track of their personal progress. Some share their progress with their friends to receive social motivation, while others track it for personal motivation.
+            </p>
+        </div>
+        <div class="col-1-1">
+            <div>
+                <h2>Develop</h2>
+            
+                <p>Inside Strava users can set goals and challenge each other on different challenges. Our work continued with ideation on how a new feature could benefit from the social platform to make the social interactions in the app even more attractive. Many features in the app that include interactions between users are competitive between the users.
+                </p>
+            </div>
+            <div class="flex-container">
+                <img class="double shadow" src="img/strava/mapping.jpg" alt="Image of a mapping method from the design process">
+            </div>
+        </div>
     </section>
+    <div id="strava-sketch">
+        <img class="shadow" src="img/strava/sketches.jpg" alt="Image of a sketch proposal of the feature">
+    </div>
+    <section class="project-body">
+        <h2>Deliver</h2>
+        <p>We wanted our feature to improve the social experience of the app and. Our final concept leveraged on the social platform and allowed the users work together instead of competing against each other. We call the feature Team Challenges. Users can group up and pick a fitting challenge to work on together.</p>
+        <div class="col-1-1">
+            <div class="flex-container">
+                <img class="single shadow" src="img/strava/challenge2.jpg" alt="screenshot of the challenge feature screen">
+            </div>
+            <div>
+                <h3>Challanges</h3>
+                <p>We leveraged the existing Challenges feature as an opportunity to create a collaborative team-based activity and encourage users to utilize the social interactions in Strava.</p>
+            </div>            
+        </div>
+
+        <div class="col-1-1">
+            <div>
+                <h3>Strava Team Challanges</h3>
+                <p>Team Challenges allow users to motivate each other in reaching a common goal. Users can create custom teams, see activity from their teammates, and send encouragement to help motivate each other.</p>
+            </div>
+            <div class="flex-container">
+                <img class="" src="img/strava/strava-team.png" alt="Image of a team challenge screen from our redesign">
+            </div>
+        </div>
+        <div class="col-1">
+            <img src="img/strava/strava-result.png" alt="Picture of a user flow through the new feature">
+        </div>
+        <div id="persona">
+            <img src="img/strava/persona.png" alt="Image of our persona used in the project">
+            <img src="img/strava/scenario.png" alt="Image describing a scenario for the persona">
+        </div>
+
+        <h2>Scalability & Feasibility</h2>
+        <p>The components of the design are easily scaled and modified based on desired user experience: types of activities in challenge, number of team members, cheers UI, etc.</p>
+        <p>The feature is feasible because we By leveraging mostly on existing interaction and UI patterns. Developing this feature will therefore require less resources such as manpower and money.</p>
+    </section>
+    
     <footer class="flex-container first">
         <div>
             <a class="flex-container project-link" href="spotify.html" aria-label="Link to spotify project page">

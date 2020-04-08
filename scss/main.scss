@@ -1,6 +1,11 @@
 //      Mixins inpired by: 
 //      Sass for webdesigners - Cederholm
 //      https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+//      https://css-tricks.com/snippets/css/complete-guide-grid/
+//      https://stackoverflow.com/questions/1409649/how-to-change-the-height-of-a-br
+//      Slanted Background: https://codepen.io/igstudio/pen/NxgOBp
+//      https://stackoverflow.com/questions/6999257/vertical-scrollbar-position-absolute
+//      https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_menu_hor_scroll
 
 $color-background: #32332E;
 $color-body-copy: #32332E;
@@ -9,6 +14,7 @@ $color-light: #F9FAF8;
 $color-semi-light: #E1E2DD;
 $color-primary: #729BA9;
 $color-primary-dark: #3A5864;
+$color-strava: #FC4C02;
 
 $font-body: 'Montserrat', Helvetica, sans-serif; //'Raleway', Helvetica, sans-serif;
 $font-title: 'Sen', Helvetica, sans-serif;
@@ -80,6 +86,7 @@ CSS Inspired by:
     https://www.w3schools.com/cssref/css3_pr_background.asp
     https://www.w3schools.com/howto/howto_css_menu_horizontal_scroll.asp
     https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_word-wrap
+    https://www.w3schools.com/css/css_positioning.asp
 */
 
 /*
@@ -91,7 +98,14 @@ CSS Inspired by:
     padding: 0;
     margin: 0;
 }
+html{
+    overflow-y: overlay;
+    //overflow-x: hidden;
+}
+
 body{
+    //padding-right: 1rem;
+    width: 100%;
     font-size: 16px;
     font-family: $font-body;
     font-weight: 400;
@@ -171,8 +185,17 @@ ul{
     margin-left: 1em;
 }
 
+br.margin{
+    display: block;
+    content: "";
+    margin-top: .5rem;
+}
+
 .fas{
     margin-right: .5em;
+}
+.fa-mobile{
+    margin-right: 1rem;
 }
 
 .copyright{
@@ -180,7 +203,10 @@ ul{
     color: $color-primary-dark;
     text-align: center;
     padding: 1em 0;
+}
 
+.centered{
+    text-align: center;
 }
 
 /*
@@ -312,7 +338,7 @@ header{
 }
 
 .project-link-dark{
-    align-self: flex-end;
+    align-self: flex-start;
     height: auto;
     color: $color-light;
     &:hover{
@@ -361,24 +387,33 @@ header{
     }
 }
 
-.project-header{
-    width: 100%;
-    justify-content: space-between;
-    padding: 1em;
-    position: absolute;
-    overflow: auto;
-    white-space: nowrap;
-    top: 0;
-    left: 0;
-    right: 0;
-}
-
 .nav-item{
     margin: 0 .5em;
+    &:hover{
+        border-bottom: solid 1.3px $color-primary;
+    }
+    &-dark{
+        margin: 0 .5em;
+        color: $color-light;
+        &:hover{
+            color: $color-semi-light;
+            border-bottom: solid 1.3px $color-semi-light;
+        }
+    }
 }
 
+
+
+
+
 .nav-active{
-    border-bottom: solid 1.3px $color-light;
+    border-bottom: solid 1.3px $color-primary-dark;
+    &-dark{
+        border-bottom: solid 1.3px $color-light;
+    }
+}
+.nav-item:hover{
+    border-bottom: solid 1.3px $color-primary;
 }
 
 /* @media (max-width: 31.25rem){
@@ -400,30 +435,507 @@ header{
     }
 }
 */
-.project-banner{
+.project{
+    &-banner{
+        &-2{
+            width: 100%;
+            height: 100vh;
+            background: {
+                color: $color-dark;
+                image: url(../img/spotify/dj-mixer-hands-set.jpg);
+                size: cover;
+            }
+            @include flexbox(column);
+        }
+        &-strava{
+            width: 100%;
+            height: 100vh;
+            background: {
+                color: $color-dark;
+                image: url(../img/strava/strava-phone-web-2.jpg);
+                size: cover;
+                position: center center;
+            }
+            @include flexbox(column);
+        }
+        &-logo{
+            @include flexbox();
+            margin: auto 1rem 2rem auto;
+            width: 40rem;
+            align-items: center;
+            img{
+                padding-right: 1.5rem;
+                width: 50%;
+                height: auto;
+            }
+            span{
+                font-size: 1.75rem;
+                color: $color-light;
+                width: 50%;
+                padding-left: 1.5rem;
+                border-left: solid 3px $color-light;
+            }
+            @media (max-width: 40rem) {
+                width: 100%;
+                padding: 0 .5em .5em;
+                span{
+                    font-size: 7vw;
+                    padding-left: 3vw;
+                }
+            }
+        }
+    }
+    &-header{
+        @include flexbox();
+        width: 100%;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 1em;
+        @media (max-width: 25rem){
+            overflow: auto;
+            white-space: nowrap;
+        }
+    }
+
+    &-body{
+        @include flexbox(column);
+        padding: 1em;
+        max-width: 56.25rem;
+        width: 100%;
+        margin: 2rem auto;
+        justify-content: center;
+        img{
+            width: 100%;
+            height: auto;
+        }
+        &-wide{
+            @include flexbox(column);
+            padding: 2rem 5%;
+            width: 100%;
+            justify-content: space-around;
+            img{
+                margin: 1rem 0;
+            }
+            
+        }
+
+    }
+    &-info{
+        p{
+            font-size: 1.2rem;
+        }   
+    }
+    &-recap{
+        margin: 1rem 0;
+    }
+}
+@media (max-width: 40rem) {
+    .project {
+        &-banner {
+            &-logo{
+                @include flexbox(column);
+                padding: 1rem;
+                margin: auto auto 2rem;
+
+                width: 100%;
+                align-items: center;
+                img{
+                    padding: 0;
+                    width: 70%;
+                    height: auto;
+                }
+                span{
+                    //text-align: center;
+                    width: 70%;
+                    margin-top: 1.5rem;
+                    padding: 0 0 0 1.5rem;
+                    //border-left: none;
+                }
+            }
+        }
+    }
+}
+.bg-dark{
     background-color: $color-dark;
+    color: $color-light;
+}
+.bg-wide{
     width: 100%;
+}
+
+.full-img{
+    width: 100%;
+    height: auto;
+}
+
+#theoretical-eval{
+    display: flex;
+    flex-basis: auto;
+    margin-bottom: 1rem;
+    img{
+        align-self: center;
+        flex-basis: auto;
+        width: 15.6rem;
+        height: auto;
+    }
+}
+
+@media (max-width: 50rem) {
+    #theoretical-eval{
+    flex-direction: column;
+    }
+}
+.banner-img{
+    margin: 0 auto;
+    position: relative;
+    img{
+        width: 100%;
+        height: auto;
+        max-width: 56.25rem;
+    }
+    #team-challenges-logo{
+        position: absolute;
+        bottom: 1em;
+        left: 1em;
+        fill: $color-light;
+    }
+}
+
+.col-1{
+    margin: 2rem 0;
+}
+.col-3-1{
+    width: 100%;
+    margin: 2rem 0;
     @include flexbox();
+    align-items: center;
+    justify-content: space-between;
+    div:first-child{
+        width: 70%;
+    }
+    div:last-child{
+        margin: 0 auto;
+        width: 20%;
+    }   
+    div{
+        img{
+            max-width: 30rem;
+        }
+    }
+    @media (max-width: 44rem) {
+        flex-wrap: wrap;
+        div:first-child{
+            width: 100%;
+        }
+        div:last-child{
+            width: 100%;
+        }   
+    }
+}
+.col-2-1{
+    width: 100%;
+    margin: 1rem 0;
+    @include flexbox();
+    align-items: center;
+    justify-content: space-between;
+    div:first-child{
+        width: 60%;
+    }
+    div:last-child{
+        margin: 0 auto;
+        width: 30%;
+    }
+    
+    div{
+        img{
+            max-width: 30rem;
+        }
+    }
+    @media (max-width: 44rem) {
+        flex-wrap: wrap;
+        div:first-child{
+            width: 100%;
+        }
+        div:last-child{
+            width: 100%;
+        }   
+    }   
+}
+
+.col-1-1{
+    margin: 1rem 0;
+    @include flexbox();
+    align-items: center;
+    justify-content: space-between;
+    div{
+        width: 45%;
+        img{
+            width: 100%;
+            height: auto;
+            max-width: 15rem;
+            margin: 0 auto;
+        }
+        &.img-double{
+            @include flexbox();
+            justify-content: center;
+            img:first-of-type{
+                margin-right: 4%;
+            }
+            img{
+                margin: 0;
+                width: 48%;
+                height: auto;
+            }
+        }
+        .double{
+            max-width: none;
+        }
+    }
+    @media (max-width:44rem) {
+        flex-wrap: wrap;
+        .reversed{
+            flex-wrap: wrap-reverse;
+        }
+        div{
+            width: 100%;
+        }
+    }
+}
+
+/*
+    --------------------------------- Spotify specific ---------------------------------
+*/
+#spotify-banner-photo{
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding: 1em;
+    max-width: 80rem;
+    margin: auto;
+    max-height: 50vh;
+    align-items: center;
     justify-content: center;
     img{
         width: auto;
         height: 100%;
-        max-height: 100vh;
-        max-width: 60rem;
+        max-height: 50vh;
+    }
+    @media (max-width:40rem) {
+        max-width: 100%;
     }
 }
 
-.project-body{
+#background{
+    margin-top: 0;
+}
+#intro{
+    margin-bottom: 10vh;
+    flex-wrap: wrap;
+}
+.slanted{
     @include flexbox(column);
-    min-height: 100vh;
-    padding: 1em;
-    max-width: 56.25rem;
-    margin: 0 auto;
-    justify-content: center;
+    &-top{
+        position: relative;
+        &::after{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-style: solid;
+            border-color: transparent;
+            border-width: 5vh 50vw;
+            border-bottom-color: $color-dark;
+            border-right-color: $color-dark;
+        }
+    }
+    &-middle{
+        position: relative;
+        &::after{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-style: solid;
+            border-color: transparent;
+            border-width: 5vh 50vw;
+            border-bottom-color: $color-light;
+            border-right-color: $color-light;
+        }
+    }
+    &-bottom{/*
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            top: -20vh;
+            left: 0;
+            right: 0;
+            border-style: solid;
+            border-color: transparent;
+            border-width: 5vh 50vw;
+            border-bottom-color: $color-light;
+            border-left-color: $color-light;
+        }*/
+    }
+    &-container{
+        
+        &-left{
+            max-width: 23.75rem;
+            padding-top: 5vh;
+        }
+
+        &-right{
+            max-width: 23.75rem;
+            padding-bottom: 5vh;
+        }
+    }
+    &-body{
+        @include flexbox(row);
+        justify-content: space-between;
+        padding: 0 1em;
+        max-width: 56.25rem;
+        margin: 0 auto 10vh;
+        h2{
+            margin-top:0;
+        }
+    }
+}
+#tested-scenarios{
+    width: 50%;
+    height: auto;
+    float: right;
+    padding-left: 5%;
+}
+
+@media (max-width: 50rem) {
+    #tested-scenarios{
+        width: 100%;
+        height: auto;
+        max-width: 30rem;
+        float: none;
+        padding: 0;
+        margin: 1rem auto;
+    }
+    br.margin{
+        margin-top: 1rem;
+    }
+}
+
+#redesign-queue{
+    @include flexbox();
+    width: 100%;
+    max-width: 40rem;
+    margin: 2rem auto;
+    align-items: center;
+    justify-content: space-between;
+    img{
+        width: 36%;
+        flex-shrink: 2;
+    }
+    .arrow{
+        width: 20%;
+        margin: 0 4%;
+        flex-shrink: 1;
+    }
+}
+
+/*
+    Strava specicic
+*/
+#strava-sketch{
+    @include flexbox();
+    width: 100%;
+    max-width: 40rem;
+    height: auto;
+    margin: 2rem auto;
     img{
         width: 100%;
         height: auto;
     }
+}
+
+.col-2{
+    margin: 1rem 0;
+    @include flexbox();
+    align-items: center;
+    justify-content: space-between;
+    div{
+        width: 45%;
+        img{
+            width: 100%;
+            height: auto;
+            max-width: 15rem;
+            margin: 0 auto;
+            .double-img{
+                width: 45%;
+                height: auto;
+            }
+        }
+        .double{
+            max-width: none;
+        }
+    }
+
+}
+
+.col-3{
+    margin: 1rem 0;
+    @include flexbox();
+    align-items: center;
+    justify-content: space-around;
+    div{
+        width: 30%;
+        img{
+        width: 100%;
+        height: auto;
+        max-width: 20rem;
+        margin: 0 auto;
+        }
+    }
+
+}
+#persona{
+    margin: 1rem auto;
+    @include flexbox();
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+
+    img{
+        width:50%;
+        height: auto;
+        max-width: 37.5rem;
+        min-width: 20rem;
+    }
+}
+
+.shadow{
+    @include shadow(10px, 10px, 20px, rgba($color: $color-primary-dark, $alpha: 0.25));
+}
+@media (max-width:43.75rem) {
+    .col-2{
+        flex-wrap: wrap-reverse;
+        div{
+            width: 100%;
+            padding-left: 0;
+        }
+        img{  
+            width: 100%;
+            margin: 1rem auto;
+        }
+    }
+    #persona{
+        @include flexbox(column);    
+        img{
+            width:100%;
+        }
+    }
+}
+@media (max-width: 37.5) {
+    
+
 }
 
 footer{
@@ -438,6 +950,18 @@ footer.last{
     justify-content: flex-start;
 }
 
+.up{
+    margin: 0 auto;
+}
+
+@media (min-width: 56.25rem) {
+    .banner-img{
+        max-width: 50rem;
+        img{
+            @include rounded(1rem);
+        }
+    }
+}
 /*
     ----------- Styleguide Page -------------
 */
