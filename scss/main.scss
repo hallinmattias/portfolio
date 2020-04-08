@@ -43,6 +43,10 @@ $font-number: 'Montserrat', Helvetica, sans-serif;
     display: -webkit-flex;
     display: flex;
 
+    align-items: center;
+    -webkit-align-items: center;
+    
+
     -webkit-flex-direction: $direction;
     -moz-flex-direction: $direction;
     -ms-flex-direction: $direction;
@@ -117,6 +121,7 @@ body{
 
 .flex-container{
     @include flexbox();
+
 }
 .no-stretch{
     align-items: center;
