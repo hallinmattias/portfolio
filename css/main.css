@@ -506,6 +506,23 @@ header {
   flex-direction: column;
 }
 
+.project-banner-helpmate {
+  width: 100%;
+  height: 100vh;
+  background-color: #27B2B2;
+  background-size: cover;
+  background-position: center center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .project-banner-logo {
   display: -webkit-box;
   display: -moz-box;
@@ -1033,6 +1050,9 @@ header {
   br.margin {
     margin-top: 1rem;
   }
+  .helpmate-hands {
+    display: none;
+  }
 }
 
 #redesign-queue {
@@ -1343,4 +1363,18 @@ footer.last {
 
 #mood img {
   max-width: 100%;
+}
+
+video {
+  width: 100%;
+  max-width: 54rem;
+  margin: 0 auto;
+}
+
+.helpmate-hands {
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  height: 100%;
+  width: auto;
 }
