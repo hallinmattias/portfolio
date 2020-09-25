@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
@@ -8,6 +10,9 @@ module.exports = {
       colors: {
         'accent-1': '#333',
       },
+      fontFamily: {
+        sans: ["Montserrat", ...defaultTheme.fontFamily.sans]
+      }
     },
   },
   variants: {},
