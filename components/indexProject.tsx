@@ -5,7 +5,7 @@ const IndexProject = (props) => (
   <div className="p-4 lg:h-screen relative flex">
     <p className="inline-block p-10 text-3xl text-left font-thin absolute left-0 top-0 text-primary-dark">{typeof props.nr != 'string' ? "0" + props.nr : props.nr}.</p>
 
-    <Link href={props.wip ? "": `${encodeURIComponent(props.src)}`}>
+    <Link href={props.wip ? '#': `${encodeURIComponent(props.src)}`}>
       <a className="m-auto">
         <motion.img 
         className="h-80" 
