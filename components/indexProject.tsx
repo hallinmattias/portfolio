@@ -5,7 +5,7 @@ const IndexProject = (props) => (
   <div className="p-4 lg:h-screen relative flex">
     <p className="inline-block p-10 text-3xl text-left font-thin absolute left-0 top-0 text-primary-dark">{typeof props.nr != 'string' ? "0" + props.nr : props.nr}.</p>
 
-    <Link href={props.wip ? '#': `${encodeURIComponent(props.src)}`}>
+    <div /*href={props.wip ? '#': `${encodeURIComponent(props.src)}`}*/>
       <a className="m-auto">
         <motion.img 
         className="h-80" 
@@ -22,7 +22,7 @@ const IndexProject = (props) => (
         }}
         />
       </a>
-    </Link>
+    </div>
     
     <div className="inline-block text-left font-thin absolute left-0 p-10 bottom-0 text-primary-dark" >
       <p className="text-xl font-normal">{props.year}</p>
@@ -36,7 +36,7 @@ const IndexProject = (props) => (
 function link(props) {
   if (!props.wip){
     return(
-      <Link href={`${encodeURIComponent(props.src)}`}>
+      <div /*href={`${encodeURIComponent(props.src)}`}*/>
         <a className="inline-block absolute bottom-0 right-0 m-10 text-primary-dark hover:text-primary h-12 w-24">
           <svg 
             width="60" 
@@ -53,7 +53,7 @@ function link(props) {
             />
           </svg>
         </a>
-      </Link>
+      </div>
     )
   }
 }

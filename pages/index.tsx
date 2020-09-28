@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import PageHead from '../components/pageHead'
 import IndexHeader from '../components/indexHeader'
 import IndexProjects from '../components/indexProjects'
