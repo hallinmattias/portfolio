@@ -1,13 +1,13 @@
-import PageHead from '../components/pageHead'
-import IndexHeader from '../components/indexHeader'
-import IndexProjects from '../components/indexProjects'
+import PageHead from "../components/PageHead";
+import IndexHeader from "../components/IndexHeader";
+import IndexProjects from "../components/IndexProjects";
 
 export default function IndexPage() {
   return (
-    <div className="flex flex-col lg:flex-row overflow-hidden overscroll-none">
+    <div className="flex flex-col overflow-hidden lg:flex-row overscroll-none">
       <PageHead />
       <IndexHeader />
-      <IndexProjects/>
+      <IndexProjects />
     </div>
-  )
+  );
 }

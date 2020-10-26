@@ -1,16 +1,17 @@
-import Link from 'next/link'
-import Nav from '../components/pageHead'
-import IndexHeader from '../components/indexHeader'
-import IndexProjects from '../components/indexProjects'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Link from "next/link";
+import Nav from "../components/PageHead";
+import IndexHeader from "../components/IndexHeader";
+import IndexProjects from "../components/IndexProjects";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import EmotionstarHero from "../components/EmotionstarHero";
 
-function EmotionStarPage() {
+export default function EmotionStarPage() {
   return (
     <div className="">
-      <h1 className="text-4xl text-left text-accent-1 font-medium">
+      <EmotionstarHero />
+      <h1 className="text-4xl font-medium text-left text-accent-1">
         Emotion Star
       </h1>
     </div>
-  )
+  );
 }
-export default EmotionStarPage;

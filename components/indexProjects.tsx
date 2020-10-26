@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import IndexProject from './indexProject'
+import { motion } from "framer-motion";
+import IndexProject from "./IndexProject";
 var x = 1;
 const IndexProjects = () => (
   <motion.div
@@ -7,53 +7,51 @@ const IndexProjects = () => (
       opacity: 0,
       translateY: 50,
     }}
-    animate={{ 
+    animate={{
       opacity: 1,
       translateY: 0,
     }}
-    transition={{ 
+    transition={{
       delay: 0.4,
-      duration: 0.5 
+      duration: 0.5,
     }}
-    className="flex-grow lg:overflow-y-scroll lg:h-screen overscroll-contain pb-4"
+    className="flex flex-col flex-grow pb-4 2xl:flex-row 2xl:flex-wrap lg:overflow-y-scroll lg:h-screen overscroll-contain"
   >
-    <IndexProject 
-      nr={x++} 
-      year="wip" 
-      name="In Your Face!" 
-      location="Chalmers Interaction Design &amp; Technology" 
-      src="emotionStar" 
-      wip={true}
+    <IndexProject
+      nr={1}
+      year="2020"
+      name="Emotion Star"
+      location="Chalmers Interaction Design &amp; Technology"
+      src="emotionstar"
     />
-    <IndexProject 
-      nr={x++} 
-      year="2020" 
-      name="Helpmate" 
-      location="Simon Fraser University" 
+    <IndexProject
+      nr={2}
+      year="2020"
+      name="Helpmate"
+      location="Simon Fraser University"
       src="helpmate"
     />
-    <IndexProject 
-      nr={x++} 
-      year="2018" 
-      name="Spotify iOS Redesign" 
-      location="Chalmers University" 
+    <IndexProject
+      nr={3}
+      year="2018"
+      name="Spotify iOS Redesign"
+      location="Chalmers University"
       src="spotify"
     />
-    <IndexProject 
-      nr={x++} 
-      year="2020" 
-      name="Strava Team Challenges" 
-      location="Simon Fraser University" 
+    <IndexProject
+      nr={4}
+      year="2020"
+      name="Strava Team Challenges"
+      location="Simon Fraser University"
       src="strava"
     />
-    <IndexProject 
+    <IndexProject
       nr="About"
       name="Mattias Hallin"
-      year="Gothenburg, Sweden" 
-      location="Gothenburg, Sweden" 
+      year="Gothenburg, Sweden"
+      location="Gothenburg, Sweden"
       src="about"
     />
   </motion.div>
-
-)
+);
 export default IndexProjects;
