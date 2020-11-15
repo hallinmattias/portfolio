@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+
 import IndexProject from "./IndexProject";
 var x = 1;
 const IndexProjects = () => (
