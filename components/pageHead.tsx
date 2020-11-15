@@ -1,8 +1,9 @@
-import Head from 'next/head'
+import Head from "next/head";
 
-const PageHead = () => (
-  <Head>
-    <title>Mattias Hallin - Portfolio</title>
-  </Head>
-)
-export default PageHead;
+export default function PageHead() {
+  return (
+    <Head>
+      <title>Mattias Hallin - Portfolio</title>
+    </Head>
+  );
+}
