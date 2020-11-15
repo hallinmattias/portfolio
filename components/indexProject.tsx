@@ -9,10 +9,14 @@ interface Props {
   src: string;
   wip?: boolean;
   imgAlt?: string;
+  id: string;
 }
 
 const IndexProject = (props: Props) => (
-  <div className="relative flex w-full lg:p-4 lg:h-screen 2xl:w-1/2 2xl:h-auto">
+  <div
+    id={props.id}
+    className="relative flex w-full lg:p-4 lg:h-screen 2xl:w-1/2 2xl:h-auto"
+  >
     <p className="absolute top-0 left-0 inline-block p-5 text-2xl font-thin text-left lg:p-10 sm:text-3xl text-primary-dark">
       {typeof props.nr != "string" ? "0" + props.nr : props.nr}.
     </p>

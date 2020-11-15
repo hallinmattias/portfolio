@@ -1,13 +1,16 @@
 import PageHead from "../components/PageHead";
 import IndexHeader from "../components/IndexHeader";
 import IndexProjects from "../components/IndexProjects";
+import HelpmateHero from "../components/HelpmateHero";
+import Body from "../components/Body";
+import EmotionstarHero from "../components/EmotionstarHero";
 
 export default function IndexPage() {
   return (
-    <div className="flex flex-col overflow-hidden lg:flex-row overscroll-none">
+    <Body>
       <PageHead />
-      <IndexHeader />
-      <IndexProjects />
-    </div>
+      <HelpmateHero link={true} />
+      <EmotionstarHero link={true} />
+    </Body>
   );
 }

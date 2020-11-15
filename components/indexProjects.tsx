@@ -39,6 +39,7 @@ const IndexProjects = () => (
       src="spotify"
     />
     <IndexProject
+      id="4"
       nr={4}
       year="2020"
       name="Strava Team Challenges"
