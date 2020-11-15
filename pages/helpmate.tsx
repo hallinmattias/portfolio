@@ -2,7 +2,6 @@ import useMeasure from "react-use-measure";
 import HelpmateHero from "../components/HelpmateHero";
 import Body from "../components/Body";
 import ProjectSwitch from "../components/ProjectSwitch";
-import ProjectSwitchRight from "../components/ProjectSwitchRight";
 
 export default function HelpmatePage() {
   const [ref, bounds] = useMeasure();

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import PageHead from "../components/PageHead";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function SpotifyPage() {

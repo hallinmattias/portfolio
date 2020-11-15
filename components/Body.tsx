@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import Navbar from "./Navbar";
-
-import ProjectSwitch from "./ProjectSwitchLeft";
+import Head from "next/head";
 
 interface Props {
   children: any;
@@ -13,6 +12,9 @@ Body.defaultProps = {
 export default function Body(props: Props) {
   return (
     <div className={`w-full font-normal bg-${props.background}-100 text-body`}>
+      <Head>
+        <title>Mattias Hallin - Portfolio</title>
+      </Head>
       <div
         style={{
           minHeight: "120vh",
