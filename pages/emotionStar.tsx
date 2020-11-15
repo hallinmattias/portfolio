@@ -1,17 +1,13 @@
-import Link from "next/link";
-import Nav from "../components/PageHead";
-import IndexHeader from "../components/IndexHeader";
-import IndexProjects from "../components/IndexProjects";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import EmotionstarHero from "../components/EmotionstarHero";
+import Body from "../components/Body";
+
+import ProjectSwitchLeft from "../components/ProjectSwitchLeft";
 
 export default function EmotionStarPage() {
   return (
-    <div className="">
+    <Body>
       <EmotionstarHero />
-      <h1 className="text-4xl font-medium text-left text-accent-1">
-        Emotion Star
-      </h1>
-    </div>
+      <ProjectSwitchLeft left="Helpmate" />
+    </Body>
   );
 }
