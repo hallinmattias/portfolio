@@ -11,7 +11,7 @@ Body.defaultProps = {
 };
 export default function Body(props: Props) {
   return (
-    <div className={`w-full font-normal bg-${props.background}-100 text-body`}>
+    <div className={`w-full font-normal bg-gray-100  text-body`}>
       <Head>
         <title>Mattias Hallin - Portfolio</title>
       </Head>
