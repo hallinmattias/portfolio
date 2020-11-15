@@ -9,7 +9,7 @@ interface Props {
   src: string;
   wip?: boolean;
   imgAlt?: string;
-  id: string;
+  id?: string;
 }
 
 const IndexProject = (props: Props) => (
