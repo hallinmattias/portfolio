@@ -1,13 +1,13 @@
 import EmotionstarHero from "../components/EmotionstarHero";
 import Body from "../components/Body";
 
-import ProjectSwitchLeft from "../components/ProjectSwitchLeft";
+import ProjectSwitch from "../components/ProjectSwitch";
 
 export default function EmotionStarPage() {
   return (
     <Body>
       <EmotionstarHero />
-      <ProjectSwitchLeft left="Helpmate" />
+      <ProjectSwitch left="Helpmate" />
     </Body>
   );
 }
