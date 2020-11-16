@@ -7,7 +7,7 @@ export default function EmotionStarPage() {
   return (
     <Body>
       <EmotionstarHero />
-      <ProjectSwitch left="Helpmate" />
+      <ProjectSwitch right="Helpmate" />
     </Body>
   );
 }

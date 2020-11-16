@@ -10,7 +10,7 @@ interface Props {
 }
 export default function ProjectSwitch(props: Props) {
   return (
-    <div>
+    <div className="absolute">
       <ProjectSwitchLeft left={props.left} />
       <ProjectSwitchRight right={props.right} />
     </div>

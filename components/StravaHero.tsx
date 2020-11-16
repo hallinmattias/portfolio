@@ -4,7 +4,7 @@ interface Props {
 }
 export default function StravaHero(props: Props) {
   return (
-    <Link href={props.link ? "/spotify" : ""}>
+    <Link href={props.link ? "/strava" : ""}>
       <div
         className={`relative w-full ${props.link && "cursor-pointer"}`}
         style={{

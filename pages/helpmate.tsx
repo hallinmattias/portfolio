@@ -126,11 +126,7 @@ export default function HelpmatePage() {
         </div>
         <img src="/img/helpmate/style.jpg" alt="" />
       </div>
-
-      <div className="w-full"></div>
-
-      <div className="w-full"></div>
-      <ProjectSwitch right="Emotionstar" />
+      <ProjectSwitch left="Emotionstar" right="Strava" />
     </Body>
   );
 }

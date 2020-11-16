@@ -1,11 +1,14 @@
-import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import EmotionstarHero from "../components/EmotionstarHero";
+import Body from "../components/Body";
 
-function StravaPage() {
+import ProjectSwitch from "../components/ProjectSwitch";
+import StravaHero from "../components/StravaHero";
+
+export default function StravaPage() {
   return (
-    <div className="">
-      <h1 className="text-4xl font-medium text-left text-accent-1">Strava</h1>
-    </div>
+    <Body>
+      <StravaHero />
+      <ProjectSwitch left="Helpmate" right="Spotify" />
+    </Body>
   );
 }
-export default StravaPage;

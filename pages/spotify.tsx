@@ -1,11 +1,14 @@
-import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import EmotionstarHero from "../components/EmotionstarHero";
+import Body from "../components/Body";
 
-function SpotifyPage() {
+import ProjectSwitch from "../components/ProjectSwitch";
+import SpotifyHero from "../components/SpotifyHero";
+
+export default function SpotifyPage() {
   return (
-    <div className="">
-      <h1 className="text-4xl font-medium text-left text-accent-1">Spotify</h1>
-    </div>
+    <Body>
+      <SpotifyHero />
+      <ProjectSwitch left="Strava" />
+    </Body>
   );
 }
-export default SpotifyPage;

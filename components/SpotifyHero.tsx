@@ -23,7 +23,9 @@ export default function SpotifyHero(props: Props) {
           }`}
         >
           <img
-            className="self-start w-full justify-self-start"
+            className={`self-start ${
+              props.link ? "w-full" : "w-2/3"
+            } justify-self-start`}
             src="/img/spotify/banner.png"
             alt=""
           />
