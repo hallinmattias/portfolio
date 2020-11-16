@@ -14,7 +14,7 @@ export default function Navbar(props: Props) {
         <Link href="/">
           <a className="hover:text-primary">Work</a>
         </Link>
-        <Link href="/">
+        <Link href="/#about">
           <a className="hover:text-primary">About</a>
         </Link>
       </div>
