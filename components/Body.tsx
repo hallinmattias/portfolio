@@ -23,7 +23,7 @@ export default function Body(props: Props) {
         className="flex flex-col w-10/12 max-w-screen-xl mx-auto"
       >
         <Navbar />
-        <div className="space-y-6">{props.children}</div>
+        <div className="space-y-1">{props.children}</div>
       </div>
     </div>
   );

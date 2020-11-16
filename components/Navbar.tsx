@@ -12,9 +12,6 @@ export default function Navbar(props: Props) {
       <p className="text-3xl font-semibold ">Mattias Hallin</p>
       <div className="space-x-6 text-xl font-medium">
         <Link href="/">
-          <a className="hover:text-primary">Home</a>
-        </Link>
-        <Link href="/">
           <a className="hover:text-primary">Work</a>
         </Link>
         <Link href="/">

@@ -109,7 +109,7 @@ export default function HelpmatePage() {
         </div>
       </div>
 
-      <div className="grid w-full grid-cols-2 gap-6">
+      <div className="grid w-full grid-cols-2 gap-1">
         <img className="w-full" src="/img/helpmate/app-1.svg" alt="" />
         <img src="/img/helpmate/app-2-lg.jpg" alt="" />
         <img src="/img/helpmate/app-3.jpg" alt="" />
