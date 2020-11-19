@@ -10,7 +10,7 @@ interface Props {
 }
 export default function ProjectSwitch(props: Props) {
   return (
-    <div className="absolute">
+    <div className="absolute hidden lg:block">
       <ProjectSwitchLeft left={props.left} />
       <ProjectSwitchRight right={props.right} />
     </div>
