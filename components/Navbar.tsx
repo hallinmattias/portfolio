@@ -60,7 +60,7 @@ export default function Navbar(props: Props) {
           animate={{ left: show ? 0 : bounds.width }}
           transition={{ ease: "easeInOut", duration: 1 }}
           className={`
-        } fixed bottom-0 top-0 w-full bg-gray-50 z-40 p-6 flex flex-col justify-start items-center text-2xl space-y-12`}
+        } fixed bottom-0 top-0 w-full bg-gray-50 z-40 p-6 flex flex-col justify-start items-center text-2xl space-y-6`}
         >
           <Link href="/">
             <a onClick={() => setShow(false)} className="">
