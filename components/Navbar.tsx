@@ -35,7 +35,7 @@ export default function Navbar(props: Props) {
           }}
           className="flex items-center justify-center text-primary-dark md:hidden h-14 w-14"
         >
-          {hidden ? (
+          {!show ? (
             <FontAwesomeIcon className="" size="1x" icon={["fas", "bars"]} />
           ) : (
             <FontAwesomeIcon className="" size="1x" icon={["fas", "times"]} />
