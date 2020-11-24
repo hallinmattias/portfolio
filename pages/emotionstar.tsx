@@ -67,7 +67,7 @@ export default function EmotionStarPage() {
           </p>
         </div>
       </div>
-      <div className="flex-col w-1/2 px-6 mx-auto mt-6 space-y-3">
+      <div className="flex-col px-6 mx-auto mt-6 space-y-3 md:w-1/2">
         <H2>Result</H2>
         <p>
           The game is intended to push the boundaries of interactive methods,
@@ -175,7 +175,7 @@ export default function EmotionStarPage() {
           }}
         />
       </div>
-      <div className="w-1/2 px-6 mx-auto mt-6">
+      <div className="px-6 mx-auto mt-6 md:w-1/2">
         <p>Feel free to reach out if you want to know more!</p>
       </div>
       <ProjectSwitch right="Helpmate" />
