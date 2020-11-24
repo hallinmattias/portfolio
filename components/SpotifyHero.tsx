@@ -36,9 +36,7 @@ export default function SpotifyHero(props: Props) {
           </div>
           <div className="absolute bottom-0 right-0 hidden px-12 py-6 text-right text-white md:block">
             <p className="text-lg">January, 2018</p>
-            <h1 className="text-5xl font-semibold text-opacity-75">
-              Spotify -
-            </h1>
+            <h1 className="text-5xl font-semibold text-opacity-75">Spotify</h1>
             <p className="text-2xl font-medium">
               Usability research and <br /> application redesign
             </p>
@@ -46,7 +44,7 @@ export default function SpotifyHero(props: Props) {
         </div>
         <div className="px-6 pt-6 space-y-1 text-left text-body md:hidden">
           <p className="text-base">January, 2018</p>
-          <h1 className="text-4xl font-semibold text-opacity-75">Spotify -</h1>
+          <h1 className="text-4xl font-semibold text-opacity-75">Spotify</h1>
           <p className="text-xl font-medium">
             Usability research and application redesign
           </p>

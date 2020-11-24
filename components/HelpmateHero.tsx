@@ -22,7 +22,7 @@ export default function HelpmateHero(props: Props) {
         >
           <div className="absolute bottom-0 right-0 hidden px-12 py-6 text-right text-white md:block">
             <p className="text-lg">April, 2020</p>
-            <h1 className="text-5xl font-semibold">Helpmate -</h1>
+            <h1 className="text-5xl font-semibold">Helpmate</h1>
             <p className="text-2xl font-medium">
               The community based <br /> service sharing app
             </p>
@@ -30,7 +30,7 @@ export default function HelpmateHero(props: Props) {
         </div>
         <div className="px-6 pt-6 space-y-1 text-left md:hidden text-body">
           <p className="text-base">April, 2020</p>
-          <h1 className="text-4xl font-semibold">Helpmate -</h1>
+          <h1 className="text-4xl font-semibold">Helpmate</h1>
           <p className="text-xl font-medium">
             The community based service sharing app
           </p>

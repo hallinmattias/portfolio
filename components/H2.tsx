@@ -5,7 +5,7 @@ interface Props {
 export default function H2(props: Props) {
   return (
     <h2
-      className={`text-3xl md:text-4xl font-semibold text-body ${props.className}`}
+      className={`text-3xl md:text-3xl font-semibold text-body ${props.className}`}
     >
       {props.children}
     </h2>

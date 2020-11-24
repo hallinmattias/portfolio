@@ -25,7 +25,7 @@ export default function StravaHero(props: Props) {
           ></div>
           <div className="absolute bottom-0 right-0 hidden px-12 py-6 text-right text-white md:block">
             <p className="text-lg">February, 2020</p>
-            <h1 className="text-5xl font-semibold text-opacity-75">Strava -</h1>
+            <h1 className="text-5xl font-semibold text-opacity-75">Strava</h1>
             <p className="text-2xl font-medium">
               App feature <br /> design challenge
             </p>
@@ -33,7 +33,7 @@ export default function StravaHero(props: Props) {
         </div>
         <div className="px-6 pt-6 space-y-1 text-left text-body md:hidden">
           <p className="text-base">February, 2020</p>
-          <h1 className="text-4xl font-semibold text-opacity-75">Strava -</h1>
+          <h1 className="text-4xl font-semibold text-opacity-75">Strava</h1>
           <p className="text-xl font-medium">App feature design challenge</p>
         </div>
       </div>
