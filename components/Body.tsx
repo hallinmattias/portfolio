@@ -18,6 +18,11 @@ export default function Body(props: Props) {
     <div className={`w-full font-normal bg-gray-50  text-body`}>
       <Head>
         <title>Mattias Hallin - Portfolio</title>
+        <meta property="og:title" content="Mattias Hallin Portfolio" />
+        <meta property="og:type" content="Portfolio website" />
+        <meta property="og:url" content="https://mattiashallin.com" />
+        <meta property="og:image:url" content="/img/emotionstar/game.png" />
+        <meta property="og:description" content="Mattias Hallin Portfolio" />
       </Head>
       <div
         style={{

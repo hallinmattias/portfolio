@@ -9,7 +9,6 @@ import { H3 } from "../components/H2";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { url } from "inspector";
 
 export default function EmotionStarPage() {
   const [ref, boundary] = useMeasure();
