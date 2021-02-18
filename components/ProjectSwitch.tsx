@@ -5,13 +5,21 @@ import { motion } from "framer-motion";
 import useMeasure from "react-use-measure";
 
 interface Props {
+  leftName?: string;
+  leftLink?: string;
   left?: string;
   right?: string;
+  rightName?: string;
+  rightLink?: string;
 }
 export default function ProjectSwitch(props: Props) {
   return (
     <div className="absolute hidden lg:block">
-      <ProjectSwitchLeft left={props.left} />
+      <ProjectSwitchLeft
+        leftName={props.leftName}
+        leftLink={props.leftLink}
+        left={props.left}
+      />
       <ProjectSwitchRight right={props.right} />
     </div>
   );
@@ -22,7 +30,7 @@ function ProjectSwitchLeft(props: Props) {
   return (
     <div
       className={`fixed inset-y-0 left-0 z-50 flex items-center justify-center w-1/12 ${
-        !props.left && "hidden"
+        !props.left && !props.leftName && "hidden"
       }`}
     >
       <motion.div
@@ -35,14 +43,25 @@ function ProjectSwitchLeft(props: Props) {
           transition: { duration: 0.5 },
         }}
       >
-        <Link href={props.left ? `/${props.left.toLowerCase()}` : ""}>
+        <Link
+          href={
+            props.left
+              ? props.left
+                ? `/${props.left.toLowerCase()}`
+                : ""
+              : props.leftLink
+          }
+        >
           <a
-            className="flex justify-end text-opacity-50 text-primary-dark hover:text-opacity-100"
+            className="flex justify-end text-center text-opacity-50 text-primary-dark hover:text-opacity-100"
             style={{
               width: "25vw",
             }}
+            target={props.leftLink ? "_blank" : "_self"}
           >
-            <p className="py-3 text-xl font-semibold">{props.left}</p>
+            <p className="py-3 text-xl font-semibold">
+              {props.left ? props.left : props.leftName}
+            </p>
             <div
               style={{
                 width: "8.2vw",

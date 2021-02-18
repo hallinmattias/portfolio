@@ -31,9 +31,30 @@ export default function EmotionStarPage() {
             Universeum, the national science center of Sweden. Press the play
             button to reach the live demo. Runs best in Chrome computer browser.
           </p>
+          <p>
+            Entered the Student Game Competition (SGC) at CHI2021:
+            <span className="italic"></span>
+          </p>
+          <p className="italic md:ml-5">
+            “ What's interesting about this project is that it uses facial
+            expressions as the primary gameplay...”
+          </p>
+          <p className="italic md:ml-5">
+            “ The findings from this preliminary study are useful for the game
+            design community.”
+          </p>
+          <p>
+            Read about the submission{" "}
+            <span className="italic underline">
+              <Link href="https://drive.google.com/file/d/1NCa337fsLxZRldnvNiA6CnMQDhMFgWvi/view">
+                here
+              </Link>
+            </span>
+            .
+          </p>
         </div>
 
-        <div className="flex items-center justify-center h-auto col-span-2 col-start-2 md:col-span-1 md:col-start-4">
+        <div className="flex items-start justify-center h-auto col-span-2 col-start-2 md:col-span-1 md:col-start-4">
           <Link href="https://emotion-star.vercel.app/">
             <a target="_blank">
               <motion.img
@@ -58,34 +79,35 @@ export default function EmotionStarPage() {
         <div className="space-y-3">
           <H2>Contribution</H2>
           <p>
-            My role in this project was UI/UX designer, gameplay designer and
-            front-end developer. I was part a the project from developing the
+            My role in this project was UI/UX designer, gameplay developer and
+            front-end programmer. I was part a the project from developing the
             core concept to finalizing the idea and implementing the game. The
             game was built using the React.js framework Next.js, styled using
             tailwindcss and Firebase provides server back-end.
           </p>
         </div>
       </div>
-      <div className="flex-col px-6 mx-auto mt-6 space-y-3 md:w-1/2">
+      <div className="flex-col px-6 mx-auto mt-6 space-y-3">
         <H2>Result</H2>
         <p>
           The game is intended to push the boundaries of interactive methods,
-          explore innovative combinations between collaboration & competitveness
-          as well ass meassuring data and visualize it in a fun way.
+          explore innovative combinations between collaboration and
+          competitveness as well ass meassuring data and visualize it in a fun
+          way. The Emotion Star demo is currently primarily designed to lower
+          the threshold of initiating the game at an exhibition. The
+          interactions in the game is limited to five facial expressions that
+          the build in AI recognise.
         </p>
       </div>
       <div className="grid grid-cols-1 gap-6 px-6 mt-6 md:grid-cols-2">
         <div className="col-span-1 space-y-3">
           <H3>Warm-up</H3>
           <p>
-            The Emotion Star demo is currently primarily designed to lower the
-            threshold of initiating the game at an exhibition. The interactions
-            in the game is limited to five facial expressions that the build in
-            AI recognise. The start screen will automaticly transition into a
-            warm-up screen once two players has entered the "Play Area". The
-            players have a chance of practicing the emotions before the actual
-            game starts. The team is assigned a random emoji which will be shown
-            if the score becomes a high score.
+            The start screen will automaticly transition into a warm-up screen
+            once two players has entered the "Play Area". The players have a
+            chance of practicing the emotions before the actual game starts. The
+            team is assigned a random emoji which will be shown if the score
+            becomes a high score.
           </p>
         </div>
         <motion.div
@@ -158,12 +180,6 @@ export default function EmotionStarPage() {
           </p>
         </div>
         <motion.div
-          onHoverStart={() => {
-            setWarmupHover(true);
-          }}
-          onHoverEnd={() => {
-            setWarmupHover(false);
-          }}
           ref={ref}
           className="self-center col-span-1 overflow-hidden shadow-lg"
           style={{
@@ -177,7 +193,11 @@ export default function EmotionStarPage() {
       <div className="px-6 mx-auto mt-6 md:w-1/2">
         <p>Feel free to reach out if you want to know more!</p>
       </div>
-      <ProjectSwitch right="Helpmate" />
+      <ProjectSwitch
+        right="Helpmate"
+        leftLink="https://ambient-atmospheres.com/"
+        leftName="Ambient Atmospheres"
+      />
     </Body>
   );
 }

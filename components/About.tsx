@@ -10,14 +10,16 @@ export default function About() {
     >
       <img className="md:h-full h-96" src="/img/about-index.png" alt="" />
       <div className="flex flex-col items-center mx-auto text-center">
-        <H2 className="my-6 text-4xl font-semibold md:my-0 md:mb-6">Hello!</H2>
+        <H2 className="my-6 text-4xl font-semibold md:my-0 md:mb-6">
+          Hi, I'm Mattias!
+        </H2>
         <p className="px-6">
-          My name is Mattias, <br className="hidden md:block" /> I'm a MSc
-          Student in <br className="hidden md:block" /> Interaction Design and{" "}
-          <br className="hidden md:block" />
+          I'm a MSc Student in <br className="hidden md:block" /> Interaction
+          Design and <br className="hidden md:block" />
           Technologies with a BSc in <br className="hidden md:block" />{" "}
           Industrial Design Engineering.
         </p>
+
         <div className="self-center mt-6 space-x-6 md:mt-16 text-primary-dark">
           <a href="https://www.instagram.com/mattiashallin/">
             <FontAwesomeIcon
