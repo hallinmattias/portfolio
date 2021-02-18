@@ -43,13 +43,11 @@ export default function AmbientHero(props: Props) {
           </div>
         </div>
         <div className="px-6 pt-6 space-y-1 text-left text-body md:hidden">
-          <p className="text-base">October, 2020</p>
+          <p className="text-base"> </p>
           <h1 className="text-4xl font-semibold text-opacity-75">
-            Emotion Star
+            Ambient Atmospheres
           </h1>
-          <p className="text-xl font-medium">
-            The innovative facial expression <br /> recognition game
-          </p>
+          <p className="text-xl font-medium">Topology of Light</p>
         </div>
       </div>
     </Link>
